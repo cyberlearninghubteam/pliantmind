@@ -30,10 +30,6 @@ export function LogoBar() {
         </p>
 
         <div className="relative">
-          {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
           <div className="flex animate-scroll gap-14 w-max">
             {[...logos, ...logos].map((logo, i) => (
               <div

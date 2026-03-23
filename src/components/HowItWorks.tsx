@@ -17,7 +17,7 @@ const steps = [
     description:
       "We dig into your operations with fresh eyes — surfacing quick wins, long-term plays, and the stuff you might be too close to see.",
     bg: "bg-[#DDD8F3]",
-    cta: { text: "Learn More", href: "#services", style: "btn-outline" },
+    cta: { text: "Learn More", href: "#services", style: "btn-accent-purple" },
   },
   {
     number: "03",
