@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function About() {
   return (
     <section id="about" className="py-28 px-6 relative overflow-hidden">
@@ -10,36 +8,24 @@ export function About() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Image placeholder */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="aspect-square rounded-2xl bg-surface border border-border overflow-hidden relative glow">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-accent/5" />
+          <div>
+            <div className="aspect-square rounded-2xl bg-surface border border-border overflow-hidden relative glow-subtle">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-accent/5" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="h-32 w-32 rounded-full bg-accent/20 mx-auto mb-4 flex items-center justify-center">
+                  <div className="h-32 w-32 rounded-full bg-accent/15 mx-auto mb-4 flex items-center justify-center">
                     <span className="text-5xl font-bold text-accent-light">
                       MA
                     </span>
                   </div>
-                  <p className="text-sm text-text-muted">
-                    Photo coming soon
-                  </p>
+                  <p className="text-sm text-text-muted">Photo coming soon</p>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <span className="font-mono text-xs text-accent tracking-widest uppercase">
               About
             </span>
@@ -65,7 +51,7 @@ export function About() {
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-2.5">
               {[
                 "AI Strategy",
                 "Process Automation",
@@ -76,13 +62,13 @@ export function About() {
               ].map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-border bg-surface px-4 py-1.5 text-xs text-text-secondary"
+                  className="rounded-full border border-border bg-surface px-4 py-1.5 text-xs text-text-secondary hover:border-accent/20 transition-colors"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

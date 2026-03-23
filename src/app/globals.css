@@ -2,17 +2,20 @@
 
 @theme inline {
   --color-background: #0a0a0f;
-  --color-surface: #12121a;
-  --color-surface-light: #1a1a2e;
-  --color-border: #ffffff10;
-  --color-accent: #6366f1;
-  --color-accent-light: #818cf8;
-  --color-accent-glow: #6366f140;
+  --color-surface: #111118;
+  --color-surface-light: #1a1a24;
+  --color-surface-hover: #22222e;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(251, 97, 130, 0.3);
+  --color-accent: #FB6182;
+  --color-accent-light: #FFB4C5;
+  --color-accent-glow: rgba(251, 97, 130, 0.15);
+  --color-accent-glow-strong: rgba(251, 97, 130, 0.25);
   --color-text-primary: #f0f0f5;
-  --color-text-secondary: #9ca3af;
-  --color-text-muted: #6b7280;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-text-secondary: #a0a0b0;
+  --color-text-muted: #606070;
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", "Fira Code", monospace;
 }
 
 html {
@@ -22,33 +25,134 @@ html {
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Glass effect ── */
 .glass {
-  background: rgba(18, 18, 26, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(17, 17, 24, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #f0f0f5 0%, #6366f1 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #f0f0f5 0%, #FB6182 50%, #FFB4C5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* ── Accent glow on elements ── */
 .glow {
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.15), 0 0 80px rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 30px rgba(251, 97, 130, 0.2), 0 0 60px rgba(251, 97, 130, 0.08);
 }
 
+.glow-subtle {
+  box-shadow: 0 0 20px rgba(251, 97, 130, 0.1), 0 0 40px rgba(251, 97, 130, 0.04);
+}
+
+/* ── Grid background ── */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
+/* ── Radial fade / glow blobs ── */
 .radial-fade {
-  background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(251, 97, 130, 0.1) 0%, transparent 55%);
+}
+
+.radial-fade-bottom {
+  background: radial-gradient(ellipse at 50% 100%, rgba(251, 97, 130, 0.08) 0%, transparent 55%);
+}
+
+/* ── Blob decorations ── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.blob-pink {
+  background: rgba(251, 97, 130, 0.15);
+}
+
+.blob-purple {
+  background: rgba(120, 80, 220, 0.12);
+}
+
+/* ── Shine animation (Tavus-inspired) ── */
+@keyframes shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shine-text {
+  background: linear-gradient(
+    90deg,
+    #f0f0f5 0%,
+    #FFB4C5 25%,
+    #FB6182 50%,
+    #FFB4C5 75%,
+    #f0f0f5 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 5s linear infinite;
+}
+
+/* ── Card hover lift ── */
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(251, 97, 130, 0.25);
+  box-shadow: 0 8px 30px rgba(251, 97, 130, 0.08);
+}
+
+/* ── Typing cursor blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Fade-in animation ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+/* Start invisible for delayed animations */
+.animate-fade-in-up {
+  opacity: 0;
 }

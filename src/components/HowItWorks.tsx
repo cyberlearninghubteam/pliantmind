@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const steps = [
   {
     number: "01",
@@ -25,53 +23,38 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-28 px-6 border-t border-border">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+    <section className="py-28 px-6 border-t border-border relative overflow-hidden">
+      <div className="absolute inset-0 radial-fade pointer-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="text-center mb-16">
           <span className="font-mono text-xs text-accent tracking-widest uppercase">
             How it works
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4">
             Clear thinking, zero fluff.
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              className="relative"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-            >
-              <span className="font-mono text-6xl font-bold text-accent/10">
+            <div key={step.number} className="relative">
+              <span className="font-mono text-6xl font-bold text-accent/10 leading-none">
                 {step.number}
               </span>
               <h3 className="text-xl font-semibold mt-2 mb-3">{step.title}</h3>
               <p className="text-sm text-text-secondary leading-relaxed">
                 {step.description}
               </p>
+              {/* Connector arrow */}
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-8 right-0 translate-x-1/2 w-8 text-text-muted">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

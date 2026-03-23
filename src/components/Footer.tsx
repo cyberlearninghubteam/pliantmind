@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="border-t border-border py-12 px-6">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-md bg-accent flex items-center justify-center text-white font-bold text-xs">
+          <div className="h-6 w-6 rounded-md bg-accent flex items-center justify-center text-white font-bold text-[9px]">
             PM
           </div>
           <span className="text-sm font-semibold tracking-tight">

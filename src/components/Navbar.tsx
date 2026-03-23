@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navLinks = [
@@ -11,15 +11,26 @@ const navLinks = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "glass" : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-accent flex items-center justify-center text-white font-bold text-sm">
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="h-8 w-8 rounded-lg bg-accent flex items-center justify-center text-white font-bold text-[11px] tracking-tight">
             PM
           </div>
-          <span className="text-lg font-semibold tracking-tight">
+          <span className="text-[15px] font-semibold tracking-tight">
             Pliant Mind
           </span>
         </Link>
@@ -30,14 +41,14 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#book"
-            className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-white hover:bg-accent-light transition-colors"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-white hover:bg-accent-light hover:text-background transition-all duration-200 glow-subtle"
           >
             Get Started
           </a>

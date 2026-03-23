@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const rotatingWords = [
@@ -13,8 +12,10 @@ const rotatingWords = [
 
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setIsVisible(true);
     const interval = setInterval(() => {
       setWordIndex((i) => (i + 1) % rotatingWords.length);
     }, 2500);
@@ -23,93 +24,77 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg">
-      {/* Radial glow */}
+      {/* Background blobs */}
+      <div className="blob blob-pink w-[500px] h-[500px] -top-[100px] -left-[100px]" />
+      <div className="blob blob-purple w-[400px] h-[400px] top-[20%] right-[-50px]" />
+      <div className="blob blob-pink w-[300px] h-[300px] bottom-[10%] left-[30%]" />
+
+      {/* Radial fade overlay */}
       <div className="absolute inset-0 radial-fade pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent-light tracking-wide uppercase mb-8">
-            AI Advisory for Adaptive Businesses
-          </span>
-        </motion.div>
+      <div
+        className={`relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <span className="inline-block rounded-full border border-accent/20 bg-accent/8 px-4 py-1.5 text-xs font-medium text-accent-light tracking-wide uppercase mb-8">
+          AI Advisory for Adaptive Businesses
+        </span>
 
-        <motion.h1
-          className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-        >
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6">
           Your business has the potential.
           <br />
-          <span className="gradient-text">We bring the{" "}
-            <motion.span
+          <span className="gradient-text">
+            We bring the{" "}
+            <span
               key={rotatingWords[wordIndex]}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="inline-block"
+              className="inline-block animate-fade-in-up"
+              style={{ animationDuration: "0.35s" }}
             >
               {rotatingWords[wordIndex]}.
-            </motion.span>
+            </span>
           </span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          className="mx-auto max-w-2xl text-lg md:text-xl text-text-secondary mb-10 leading-relaxed"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
+        <p className="mx-auto max-w-2xl text-lg md:text-xl text-text-secondary mb-10 leading-relaxed">
           Flexible, clear-eyed AI advisory that meets your business where it
           is — and gets it where it needs to go. No jargon. No bloated
           retainers. Just sharp thinking that moves the needle.
-        </motion.p>
+        </p>
 
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#book"
-            className="rounded-full bg-accent px-8 py-3.5 text-sm font-medium text-white hover:bg-accent-light transition-colors glow"
+            className="rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white hover:bg-accent-light hover:text-background transition-all duration-200 glow"
           >
             Book a Session
           </a>
           <a
             href="#services"
-            className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-text-secondary hover:text-text-primary hover:border-text-muted transition-colors"
+            className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-text-secondary hover:text-text-primary hover:border-accent/30 transition-all duration-200"
           >
             Explore Services
           </a>
-        </motion.div>
+        </div>
 
-        {/* Stats */}
-        <motion.div
-          className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-        >
+        {/* Stats row */}
+        <div className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto">
           {[
             { value: "10+", label: "Years Experience" },
             { value: "50+", label: "Businesses Transformed" },
             { value: "3x", label: "Avg. Efficiency Gain" },
-          ].map((stat) => (
-            <div key={stat.label}>
+          ].map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`animate-fade-in-up animate-delay-${(i + 3) * 100}`}
+            >
               <div className="text-2xl md:text-3xl font-bold text-accent-light">
                 {stat.value}
               </div>
               <div className="text-xs text-text-muted mt-1">{stat.label}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
