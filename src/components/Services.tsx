@@ -42,12 +42,12 @@ const services = [
     cta: { text: "Learn More", href: "#book", style: "btn-accent-orange" },
   },
   {
-    dot: "dot-black",
+    dot: "dot-teal",
     label: "TRAINING",
     title: "Team Training & Enablement",
     description:
       "AI is only as good as the people using it. We run hands-on workshops that get your team confident with prompt engineering, AI tools, and automation — tailored to how they actually work.",
-    cta: { text: "Learn More", href: "#book", style: "btn-outline" },
+    cta: { text: "Learn More", href: "#book", style: "btn-accent-teal" },
   },
 ];
 

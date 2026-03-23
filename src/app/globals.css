@@ -166,6 +166,28 @@ body {
   .dot-black { background: #1A1A1A; }
   .dot-purple { background: #7C3AED; }
   .dot-orange { background: #F97316; }
+  .dot-teal { background: #14B8A6; }
+
+  .btn-accent-teal {
+    background: #14B8A6;
+    color: white;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 2px solid #1A1A1A;
+    box-shadow: 3px 3px 0 #1A1A1A;
+    transition: all 0.15s ease;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-accent-teal:hover {
+    box-shadow: 1px 1px 0 #1A1A1A;
+    transform: translate(2px, 2px);
+  }
 
   /* ── Additional accent buttons ── */
   .btn-accent-purple {
