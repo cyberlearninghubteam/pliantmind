@@ -48,20 +48,20 @@ export function About() {
             </h2>
             <div className="space-y-4 text-text-secondary leading-relaxed">
               <p>
-                I help small and mid-size businesses cut through the AI hype and
-                find real, practical ways to automate their operations and grow
-                smarter.
+                Most businesses don&apos;t need more tools — they need someone
+                who can see the whole picture and tell them what actually matters.
+                That&apos;s what I do.
               </p>
               <p>
-                With over a decade of experience in technology, operations, and
-                digital transformation, I&apos;ve seen firsthand how the right
-                automation strategy can turn a stretched-thin team into a
-                high-performance operation.
+                With over a decade in technology, operations, and digital
+                transformation, I&apos;ve helped teams go from overwhelmed and
+                duct-taped together to running lean, automated operations that
+                scale without burning people out.
               </p>
               <p>
-                I don&apos;t sell software. I don&apos;t push vendors. I give you
-                honest, expert advice on what will actually move the needle for
-                your business — and then help you make it happen.
+                I&apos;m not here to sell you software or push a vendor.
+                I&apos;m the outside perspective that sees what you&apos;re too
+                close to notice — and gives you a clear, honest path forward.
               </p>
             </div>
 

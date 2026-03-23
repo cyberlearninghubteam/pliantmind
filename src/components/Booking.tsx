@@ -38,11 +38,11 @@ export function Booking() {
             Get started
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4">
-            Book a Session
+            Let&apos;s think through it together.
           </h2>
           <p className="text-text-secondary max-w-xl mx-auto">
-            Your first 30-minute discovery call is free. Pick a time below and
-            let&apos;s talk about how AI can transform your business.
+            First 30-minute discovery call is free — no pitch, no pressure.
+            Just a sharp conversation about where AI fits in your business.
           </p>
         </motion.div>
 

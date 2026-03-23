@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const rotatingWords = [
-  "Efficiency",
-  "Growth",
-  "Scale",
-  "Automation",
-  "Intelligence",
+  "Clarity",
+  "Agility",
+  "Leverage",
+  "Momentum",
+  "Edge",
 ];
 
 export function Hero() {
@@ -33,7 +33,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent-light tracking-wide uppercase mb-8">
-            AI & Automation Advisory
+            AI Advisory for Adaptive Businesses
           </span>
         </motion.div>
 
@@ -43,9 +43,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
-          Transform your operations.
+          Your business has the potential.
           <br />
-          <span className="gradient-text">Unlock{" "}
+          <span className="gradient-text">We bring the{" "}
             <motion.span
               key={rotatingWords[wordIndex]}
               initial={{ opacity: 0, y: 20 }}
@@ -65,9 +65,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Expert advisory helping SMBs harness AI and automation to cut costs,
-          streamline workflows, and scale faster — without the enterprise price
-          tag.
+          Flexible, clear-eyed AI advisory that meets your business where it
+          is — and gets it where it needs to go. No jargon. No bloated
+          retainers. Just sharp thinking that moves the needle.
         </motion.p>
 
         <motion.div

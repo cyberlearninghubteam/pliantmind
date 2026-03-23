@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pliant Mind — AI & Automation Advisory",
   description:
-    "Transform your business operations with expert AI & automation advisory. Book a session with Matt Anderson to unlock efficiency, cut costs, and scale smarter.",
+    "Flexible, clear-eyed AI & automation advisory for businesses that want to move smarter. Book a session with Matt Anderson.",
   openGraph: {
     title: "Pliant Mind — AI & Automation Advisory",
     description:

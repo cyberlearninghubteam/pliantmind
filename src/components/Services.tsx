@@ -11,7 +11,7 @@ const services = [
     ),
     title: "AI Strategy & Roadmap",
     description:
-      "A clear, actionable plan for integrating AI into your business. We assess your current operations, identify high-impact opportunities, and build a phased roadmap tailored to your budget and goals.",
+      "Cut through the noise. We assess where you are, identify the highest-impact opportunities, and build a phased plan that fits your budget, your team, and the way you actually work.",
   },
   {
     icon: (
@@ -21,7 +21,7 @@ const services = [
     ),
     title: "Workflow Automation",
     description:
-      "Eliminate repetitive tasks and manual bottlenecks. We design and implement automation solutions using tools like n8n, Make, Zapier, and custom integrations that save your team hours every week.",
+      "Stop burning hours on tasks a machine should handle. We design and wire up automations with n8n, Make, Zapier, and custom integrations — so your team can focus on work that matters.",
   },
   {
     icon: (
@@ -31,7 +31,7 @@ const services = [
     ),
     title: "AI Chatbots & Assistants",
     description:
-      "Deploy intelligent chatbots and AI assistants that handle customer inquiries, qualify leads, and support your team — powered by the latest LLM technology, customized to your brand and data.",
+      "Give your customers and team an always-on AI that actually knows your business. We build intelligent assistants that handle inquiries, qualify leads, and free up your people.",
   },
   {
     icon: (
@@ -41,7 +41,7 @@ const services = [
     ),
     title: "Data & Analytics",
     description:
-      "Turn your data into decisions. We help you set up dashboards, reporting pipelines, and AI-powered analytics so you always know what's working and where to optimize.",
+      "You're sitting on more insight than you think. We set up dashboards, reporting pipelines, and AI-powered analytics so you can see what's working — and where to push harder.",
   },
   {
     icon: (
@@ -51,7 +51,7 @@ const services = [
     ),
     title: "Tool Selection & Integration",
     description:
-      "Navigate the overwhelming AI tool landscape with confidence. We evaluate, recommend, and integrate the right tools for your stack — no vendor lock-in, no unnecessary spend.",
+      "The AI tool landscape changes weekly. We stay on top of it so you don't have to — evaluating, recommending, and integrating what actually fits your stack. No vendor lock-in.",
   },
   {
     icon: (
@@ -61,7 +61,7 @@ const services = [
     ),
     title: "Team Training & Enablement",
     description:
-      "Upskill your team to work with AI, not against it. We run hands-on workshops covering prompt engineering, AI tools, and automation best practices tailored to your industry.",
+      "AI is only as good as the people using it. We run hands-on workshops that get your team confident with prompt engineering, AI tools, and automation — tailored to how they actually work.",
   },
 ];
 
@@ -89,14 +89,15 @@ export function Services() {
           transition={{ duration: 0.5 }}
         >
           <span className="font-mono text-xs text-accent tracking-widest uppercase">
-            What we do
+            How we help
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4">
-            Services
+            Bend, don&apos;t break.
           </h2>
           <p className="text-text-secondary max-w-xl mx-auto">
-            Practical, results-driven AI and automation advisory designed for
-            businesses that want to move fast without breaking things.
+            Every business is different. We adapt our thinking to your reality
+            — finding the right AI and automation moves that actually fit how
+            your team works.
           </p>
         </motion.div>
 

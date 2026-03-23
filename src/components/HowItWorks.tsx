@@ -7,19 +7,19 @@ const steps = [
     number: "01",
     title: "Book a Session",
     description:
-      "Pick a time that works for you. First 30-minute discovery call is free — no strings attached.",
+      "Grab a time that works. The first 30-minute discovery call is on us — just a conversation about where you are and what's possible.",
   },
   {
     number: "02",
     title: "We Assess & Strategize",
     description:
-      "We dive into your current operations, identify quick wins and long-term opportunities, and map out a clear plan.",
+      "We dig into your operations with fresh eyes — surfacing quick wins, long-term plays, and the stuff you might be too close to see.",
   },
   {
     number: "03",
     title: "You Transform",
     description:
-      "Walk away with actionable recommendations, tool selections, and implementation guidance you can execute on immediately.",
+      "You leave with a clear playbook — specific recommendations, tool picks, and implementation steps you can act on tomorrow.",
   },
 ];
 
@@ -38,7 +38,7 @@ export function HowItWorks() {
             How it works
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4">
-            Simple. No BS.
+            Clear thinking, zero fluff.
           </h2>
         </motion.div>
 
