@@ -1,7 +1,7 @@
 export function BrainLogo({ size = 32, className = "" }: { size?: number; className?: string }) {
   return (
     <div
-      className={`rounded-lg bg-[#1A1A1A] flex items-center justify-center ${className}`}
+      className={`rounded-lg bg-[#E04D6E] flex items-center justify-center ${className}`}
       style={{ width: size, height: size }}
     >
       <svg
@@ -15,32 +15,32 @@ export function BrainLogo({ size = 32, className = "" }: { size?: number; classN
         {/* Left hemisphere facets */}
         <polygon
           points="12,3 7,6 8,10"
-          fill="#FB6182"
+          fill="white"
           opacity="0.9"
         />
         <polygon
           points="7,6 4,10 8,10"
-          fill="#FB6182"
+          fill="white"
           opacity="0.6"
         />
         <polygon
           points="4,10 5,15 8,10"
-          fill="#FB6182"
+          fill="white"
           opacity="0.8"
         />
         <polygon
           points="8,10 5,15 9,17"
-          fill="#FB6182"
+          fill="white"
           opacity="0.5"
         />
         <polygon
           points="8,10 9,17 12,12"
-          fill="#FB6182"
+          fill="white"
           opacity="0.7"
         />
         <polygon
           points="9,17 12,21 12,12"
-          fill="#FB6182"
+          fill="white"
           opacity="0.4"
         />
 
@@ -79,7 +79,7 @@ export function BrainLogo({ size = 32, className = "" }: { size?: number; classN
         {/* Center fold line */}
         <line
           x1="12" y1="3" x2="12" y2="21"
-          stroke="#1A1A1A"
+          stroke="#E04D6E"
           strokeWidth="0.5"
           opacity="0.3"
         />
