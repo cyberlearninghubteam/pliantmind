@@ -44,15 +44,15 @@ export function Hero() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6">
           Your business has the potential.
           <br />
-          <span className="gradient-text">
-            We bring the{" "}
-            <span
-              key={rotatingWords[wordIndex]}
-              className="inline-block animate-fade-in-up"
-              style={{ animationDuration: "0.35s" }}
-            >
-              {rotatingWords[wordIndex]}.
-            </span>
+          <span className="gradient-text">We bring the</span>{" "}
+          <span
+            key={rotatingWords[wordIndex]}
+            className="inline-block text-accent"
+            style={{
+              animation: "fadeInUp 0.35s ease-out forwards",
+            }}
+          >
+            {rotatingWords[wordIndex]}.
           </span>
         </h1>
 
