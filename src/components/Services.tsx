@@ -19,10 +19,10 @@ const services = [
   },
   {
     dot: "dot-pink",
-    label: "AI ASSISTANTS",
-    title: "AI Chatbots & Assistants",
+    label: "AGENTIC AI",
+    title: "Agentic AI & Assistants",
     description:
-      "Give your customers and team an always-on AI that actually knows your business. We build intelligent assistants that handle inquiries, qualify leads, and free up your people.",
+      "Go beyond chatbots. We build autonomous AI agents that reason, take action, and get work done — handling customer inquiries, qualifying leads, and running multi-step workflows without hand-holding.",
     cta: { text: "Learn More", href: "#book", style: "btn-accent-pink" },
   },
   {
