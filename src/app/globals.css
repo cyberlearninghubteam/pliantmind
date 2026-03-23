@@ -156,3 +156,21 @@ body {
 .animate-fade-in-up {
   opacity: 0;
 }
+
+/* ── Logo scroll ── */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 35s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
