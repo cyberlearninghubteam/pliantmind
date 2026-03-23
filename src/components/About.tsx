@@ -11,15 +11,17 @@ export function About() {
         <div className="max-w-3xl mx-auto">
           {/* Header with photo */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-            <div className="relative w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-2 border-accent/30 glow-subtle">
-              <Image
-                src="/matt-anderson.png"
-                alt="Matt Anderson — Pliant Mind"
-                fill
-                className="object-cover object-top scale-110"
-                sizes="112px"
-                priority
-              />
+            <div className="w-28 h-28 flex-shrink-0 rounded-full border-2 border-accent/30 glow-subtle p-1.5 bg-surface">
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/matt-anderson.png"
+                  alt="Matt Anderson — Pliant Mind"
+                  fill
+                  className="object-cover object-top scale-110"
+                  sizes="112px"
+                  priority
+                />
+              </div>
             </div>
             <div className="text-center sm:text-left">
               <span className="font-mono text-xs text-accent tracking-widest uppercase">
