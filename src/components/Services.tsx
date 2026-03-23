@@ -26,28 +26,28 @@ const services = [
     cta: { text: "Learn More", href: "#book", style: "btn-accent-pink" },
   },
   {
-    dot: "dot-black",
+    dot: "dot-purple",
     label: "ANALYTICS",
     title: "Data & Analytics",
     description:
       "You're sitting on more insight than you think. We set up dashboards, reporting pipelines, and AI-powered analytics so you can see what's working — and where to push harder.",
-    cta: { text: "Learn More", href: "#book", style: "btn-accent-green" },
+    cta: { text: "Learn More", href: "#book", style: "btn-accent-purple" },
   },
   {
-    dot: "dot-yellow",
+    dot: "dot-orange",
     label: "INTEGRATION",
     title: "Tool Selection & Integration",
     description:
       "The AI tool landscape changes weekly. We stay on top of it so you don't have to — evaluating, recommending, and integrating what actually fits your stack. No vendor lock-in.",
-    cta: { text: "Learn More", href: "#book", style: "btn-accent-yellow" },
+    cta: { text: "Learn More", href: "#book", style: "btn-accent-orange" },
   },
   {
-    dot: "dot-pink",
+    dot: "dot-black",
     label: "TRAINING",
     title: "Team Training & Enablement",
     description:
       "AI is only as good as the people using it. We run hands-on workshops that get your team confident with prompt engineering, AI tools, and automation — tailored to how they actually work.",
-    cta: { text: "Learn More", href: "#book", style: "btn-accent-pink" },
+    cta: { text: "Learn More", href: "#book", style: "btn-outline" },
   },
 ];
 

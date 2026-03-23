@@ -1,7 +1,7 @@
 export function BrainLogo({ size = 32, className = "" }: { size?: number; className?: string }) {
   return (
     <div
-      className={`rounded-lg bg-accent flex items-center justify-center ${className}`}
+      className={`rounded-lg bg-[#E04D6E] flex items-center justify-center ${className}`}
       style={{ width: size, height: size }}
     >
       <svg
