@@ -98,6 +98,103 @@ body {
   transform: translateY(-2px);
 }
 
+/* ── Window-style card (Tavus-inspired) ── */
+@layer utilities {
+  .card-window {
+    background: var(--color-surface);
+    border: 2px solid var(--color-text-primary);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .card-window:hover {
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.08);
+    transform: translate(-2px, -2px);
+  }
+
+  .card-window-inner {
+    border: 1px dashed rgba(0, 0, 0, 0.15);
+    margin: 8px;
+    padding: 24px;
+  }
+
+  /* ── Colour dots ── */
+  .dot {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+  }
+
+  .dot-pink { background: #FB6182; }
+  .dot-green { background: #2ECC71; }
+  .dot-yellow { background: #F1C40F; }
+  .dot-black { background: #1A1A1A; }
+
+  /* ── Colour accent buttons ── */
+  .btn-accent-green {
+    background: #2ECC71;
+    color: #1A1A1A;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 2px solid #1A1A1A;
+    box-shadow: 3px 3px 0 #1A1A1A;
+    transition: all 0.15s ease;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-accent-green:hover {
+    box-shadow: 1px 1px 0 #1A1A1A;
+    transform: translate(2px, 2px);
+  }
+
+  .btn-accent-yellow {
+    background: #F1C40F;
+    color: #1A1A1A;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 2px solid #1A1A1A;
+    box-shadow: 3px 3px 0 #1A1A1A;
+    transition: all 0.15s ease;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-accent-yellow:hover {
+    box-shadow: 1px 1px 0 #1A1A1A;
+    transform: translate(2px, 2px);
+  }
+
+  .btn-accent-pink {
+    background: #FB6182;
+    color: white;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 2px solid #1A1A1A;
+    box-shadow: 3px 3px 0 #1A1A1A;
+    transition: all 0.15s ease;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-accent-pink:hover {
+    box-shadow: 1px 1px 0 #1A1A1A;
+    transform: translate(2px, 2px);
+  }
+}
+
 /* ── Divider ── */
 .divider {
   border: none;

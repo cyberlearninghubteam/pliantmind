@@ -35,10 +35,13 @@ export function HowItWorks() {
         <div className="grid md:grid-cols-3 gap-10">
           {steps.map((step, i) => (
             <div key={step.number} className="relative">
-              <span className="heading-serif text-[72px] text-text-primary/[0.06] leading-none block">
-                {step.number}
-              </span>
-              <h3 className="text-xl font-bold mt-1 mb-3 text-text-primary">
+              <div className="flex items-center gap-3 mb-3">
+                <span className={`dot ${["dot-green", "dot-yellow", "dot-pink"][i]}`} />
+                <span className="text-[11px] font-bold tracking-widest uppercase text-text-muted">
+                  Step {step.number}
+                </span>
+              </div>
+              <h3 className="heading-serif text-[24px] md:text-[28px] mb-3 text-text-primary">
                 {step.title}
               </h3>
               <p className="text-sm text-text-secondary leading-relaxed">
