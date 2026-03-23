@@ -11,7 +11,7 @@ export function About() {
         <div className="max-w-3xl mx-auto">
           {/* Header with photo */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-            <div className="relative w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-2 border-accent/30 glow-subtle">
+            <div className="relative w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-2 border-accent/30 glow-subtle bg-white">
               <Image
                 src="/matt-anderson.png"
                 alt="Matt Anderson — Pliant Mind"
