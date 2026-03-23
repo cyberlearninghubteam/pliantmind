@@ -27,16 +27,16 @@ export function About() {
           {/* Content */}
           <div>
             <span className="font-mono text-xs text-accent tracking-widest uppercase">
-              About
+              The mind behind it
             </span>
             <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-6">
               Matt Anderson
             </h2>
             <div className="space-y-4 text-text-secondary leading-relaxed">
               <p>
-                Most businesses don&apos;t need more tools — they need someone
-                who can see the whole picture and tell them what actually matters.
-                That&apos;s what I do.
+                Pliant Mind is me — one advisor, no layers, no account managers.
+                When you book a session, you get the person who actually does
+                the thinking and the work.
               </p>
               <p>
                 With over a decade in technology, operations, and digital
