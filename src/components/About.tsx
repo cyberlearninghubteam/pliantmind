@@ -1,37 +1,38 @@
 "use client";
 
+import Image from "next/image";
+
 export function About() {
   return (
     <section id="about" className="py-28 px-6 relative overflow-hidden">
       <div className="absolute inset-0 radial-fade pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image placeholder */}
-          <div>
-            <div className="aspect-square rounded-2xl bg-surface border border-border overflow-hidden relative glow-subtle">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-accent/5" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="h-32 w-32 rounded-full bg-accent/15 mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-5xl font-bold text-accent-light">
-                      MA
-                    </span>
-                  </div>
-                  <p className="text-sm text-text-muted">Photo coming soon</p>
-                </div>
-              </div>
+        <div className="max-w-3xl mx-auto">
+          {/* Header with photo */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
+            <div className="relative w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-2 border-accent/30 glow-subtle">
+              <Image
+                src="/matt-anderson.png"
+                alt="Matt Anderson — Pliant Mind"
+                fill
+                className="object-cover object-top scale-110"
+                sizes="112px"
+                priority
+              />
+            </div>
+            <div className="text-center sm:text-left">
+              <span className="font-mono text-xs text-accent tracking-widest uppercase">
+                The mind behind it
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold mt-2">
+                Matt Anderson
+              </h2>
             </div>
           </div>
 
           {/* Content */}
           <div>
-            <span className="font-mono text-xs text-accent tracking-widest uppercase">
-              The mind behind it
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-6">
-              Matt Anderson
-            </h2>
             <div className="space-y-4 text-text-secondary leading-relaxed">
               <p>
                 Pliant Mind is me — one advisor, no layers, no account managers.
