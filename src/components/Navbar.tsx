@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { BrainLogo } from "./BrainLogo";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -27,9 +28,7 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="h-8 w-8 rounded-lg bg-accent flex items-center justify-center text-white font-bold text-[11px] tracking-tight">
-            PM
-          </div>
+          <BrainLogo size={32} />
           <span className="text-[15px] font-semibold tracking-tight">
             Pliant Mind
           </span>
