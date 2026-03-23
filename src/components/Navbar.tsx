@@ -17,10 +17,10 @@ export function Navbar() {
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-lg bg-accent flex items-center justify-center text-white font-bold text-sm">
-            O
+            PM
           </div>
           <span className="text-lg font-semibold tracking-tight">
-            Opscaled
+            Pliant Mind
           </span>
         </Link>
 
