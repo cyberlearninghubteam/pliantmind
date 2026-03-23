@@ -23,32 +23,30 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-28 px-6 border-t border-border relative overflow-hidden">
-      <div className="absolute inset-0 radial-fade pointer-events-none" />
-
-      <div className="relative z-10 mx-auto max-w-6xl">
+    <section className="py-28 px-6 bg-surface-warm">
+      <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <span className="font-mono text-xs text-accent tracking-widest uppercase">
-            How it works
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4">
+          <span className="section-label">How it works</span>
+          <h2 className="heading-serif text-[32px] md:text-[52px] mt-3 mb-4">
             Clear thinking, zero fluff.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-10">
           {steps.map((step, i) => (
             <div key={step.number} className="relative">
-              <span className="font-mono text-6xl font-bold text-accent/10 leading-none">
+              <span className="heading-serif text-[72px] text-text-primary/[0.06] leading-none block">
                 {step.number}
               </span>
-              <h3 className="text-xl font-semibold mt-2 mb-3">{step.title}</h3>
+              <h3 className="text-xl font-bold mt-1 mb-3 text-text-primary">
+                {step.title}
+              </h3>
               <p className="text-sm text-text-secondary leading-relaxed">
                 {step.description}
               </p>
-              {/* Connector arrow */}
+              {/* Connector */}
               {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 right-0 translate-x-1/2 w-8 text-text-muted">
+                <div className="hidden md:block absolute top-10 right-0 translate-x-1/2 w-8 text-text-muted">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>

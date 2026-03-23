@@ -65,18 +65,14 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-28 px-6 relative">
-      <div className="absolute inset-0 radial-fade-bottom pointer-events-none" />
-
-      <div className="relative z-10 mx-auto max-w-6xl">
+    <section id="services" className="py-28 px-6">
+      <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <span className="font-mono text-xs text-accent tracking-widest uppercase">
-            How we help
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4">
+          <span className="section-label">How we help</span>
+          <h2 className="heading-serif text-[32px] md:text-[52px] mt-3 mb-4">
             Bend, don&apos;t break.
           </h2>
-          <p className="text-text-secondary max-w-xl mx-auto">
+          <p className="text-text-secondary max-w-xl mx-auto text-lg">
             Every business is different. We adapt our thinking to your reality
             — finding the right AI and automation moves that actually fit how
             your team works.
@@ -87,12 +83,14 @@ export function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-2xl border border-border bg-surface p-7 card-hover"
+              className="card rounded-lg p-7"
             >
-              <div className="inline-flex items-center justify-center h-11 w-11 rounded-xl bg-accent/10 text-accent mb-5 group-hover:bg-accent/15 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-accent/10 text-accent mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-[15px] font-semibold mb-2.5">{service.title}</h3>
+              <h3 className="text-[16px] font-bold mb-2.5 text-text-primary">
+                {service.title}
+              </h3>
               <p className="text-sm text-text-secondary leading-relaxed">
                 {service.description}
               </p>

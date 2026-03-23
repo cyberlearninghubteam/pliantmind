@@ -4,14 +4,12 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <section id="about" className="py-28 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 radial-fade pointer-events-none" />
-
-      <div className="relative z-10 mx-auto max-w-6xl">
+    <section id="about" className="py-28 px-6">
+      <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl mx-auto">
           {/* Header with photo */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-            <div className="relative w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-2 border-accent/30 glow-subtle bg-white">
+            <div className="relative w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-2 border-accent/30 bg-white">
               <Image
                 src="/matt-anderson.png"
                 alt="Matt Anderson — Pliant Mind"
@@ -22,10 +20,8 @@ export function About() {
               />
             </div>
             <div className="text-center sm:text-left">
-              <span className="font-mono text-xs text-accent tracking-widest uppercase">
-                The mind behind it
-              </span>
-              <h2 className="text-3xl md:text-5xl font-bold mt-2">
+              <span className="section-label">The mind behind it</span>
+              <h2 className="heading-serif text-[32px] md:text-[48px] mt-2">
                 Matt Anderson
               </h2>
             </div>
@@ -33,7 +29,7 @@ export function About() {
 
           {/* Content */}
           <div>
-            <div className="space-y-4 text-text-secondary leading-relaxed">
+            <div className="space-y-4 text-text-secondary leading-relaxed text-[16px]">
               <p>
                 Pliant Mind is me — one advisor, no layers, no account managers.
                 When you book a session, you get the person who actually does
@@ -61,10 +57,7 @@ export function About() {
                 "Data Pipelines",
                 "Team Enablement",
               ].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-border bg-surface px-4 py-1.5 text-xs text-text-secondary hover:border-accent/20 transition-colors"
-                >
+                <span key={tag} className="tag rounded-full">
                   {tag}
                 </span>
               ))}

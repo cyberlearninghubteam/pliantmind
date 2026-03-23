@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <BrainLogo size={24} />
-          <span className="text-sm font-semibold tracking-tight">
+          <span className="text-sm font-semibold tracking-tight text-text-primary">
             Pliant Mind
           </span>
         </div>

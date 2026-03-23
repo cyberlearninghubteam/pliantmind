@@ -23,72 +23,54 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg">
-      {/* Background blobs */}
-      <div className="blob blob-pink w-[500px] h-[500px] -top-[100px] -left-[100px]" />
-      <div className="blob blob-purple w-[400px] h-[400px] top-[20%] right-[-50px]" />
-      <div className="blob blob-pink w-[300px] h-[300px] bottom-[10%] left-[30%]" />
-
-      {/* Radial fade overlay */}
-      <div className="absolute inset-0 radial-fade pointer-events-none" />
-
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div
-        className={`relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center transition-all duration-700 ${
+        className={`relative z-10 mx-auto max-w-4xl px-6 pt-32 pb-20 text-center transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <span className="inline-block rounded-full border border-accent/20 bg-accent/8 px-4 py-1.5 text-xs font-medium text-accent-light tracking-wide uppercase mb-8">
+        <span className="section-label mb-8 inline-block">
           AI Advisory for Adaptive Businesses
         </span>
 
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6">
-          Your business has the potential.
+        <h1 className="heading-serif text-[42px] md:text-[72px] mb-6">
+          Your business has
           <br />
-          <span className="gradient-text">We bring the</span>{" "}
-          <span
-            key={rotatingWords[wordIndex]}
-            className="inline-block text-accent"
-            style={{
-              animation: "fadeInUp 0.35s ease-out forwards",
-            }}
-          >
-            {rotatingWords[wordIndex]}.
+          the potential.{" "}
+          <span className="text-accent">
+            <span
+              key={rotatingWords[wordIndex]}
+              className="inline-block"
+              style={{ animation: "fadeInUp 0.35s ease-out forwards" }}
+            >
+              {rotatingWords[wordIndex]}.
+            </span>
           </span>
         </h1>
 
-        <p className="mx-auto max-w-2xl text-lg md:text-xl text-text-secondary mb-10 leading-relaxed">
+        <p className="mx-auto max-w-xl text-lg md:text-xl text-text-secondary mb-10 leading-relaxed">
           Flexible, clear-eyed AI advisory that meets your business where it
-          is — and gets it where it needs to go. No jargon. No bloated
-          retainers. Just sharp thinking that moves the needle.
+          is — and gets it where it needs to go.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#book"
-            className="rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white hover:bg-accent-light hover:text-background transition-all duration-200 glow"
-          >
+          <a href="#book" className="btn-primary">
             Book a Session
           </a>
-          <a
-            href="#services"
-            className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-text-secondary hover:text-text-primary hover:border-accent/30 transition-all duration-200"
-          >
+          <a href="#services" className="btn-outline">
             Explore Services
           </a>
         </div>
 
         {/* Stats row */}
-        <div className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+        <div className="mt-20 grid grid-cols-3 gap-8 max-w-md mx-auto">
           {[
             { value: "10+", label: "Years Experience" },
             { value: "50+", label: "Businesses Transformed" },
             { value: "3x", label: "Avg. Efficiency Gain" },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`animate-fade-in-up animate-delay-${(i + 3) * 100}`}
-            >
-              <div className="text-2xl md:text-3xl font-bold text-accent-light">
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="heading-serif text-2xl md:text-3xl text-text-primary">
                 {stat.value}
               </div>
               <div className="text-xs text-text-muted mt-1">{stat.label}</div>

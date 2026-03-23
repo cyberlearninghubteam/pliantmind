@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0f;
-  --color-surface: #111118;
-  --color-surface-light: #1a1a24;
-  --color-surface-hover: #22222e;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(251, 97, 130, 0.3);
+  --color-background: #F5F0EA;
+  --color-background-warm: #EDE8E1;
+  --color-surface: #FFFFFF;
+  --color-surface-warm: #FAF7F4;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.15);
   --color-accent: #FB6182;
-  --color-accent-light: #FFB4C5;
-  --color-accent-glow: rgba(251, 97, 130, 0.15);
-  --color-accent-glow-strong: rgba(251, 97, 130, 0.25);
-  --color-text-primary: #f0f0f5;
-  --color-text-secondary: #a0a0b0;
-  --color-text-muted: #606070;
+  --color-accent-light: #FF8BA3;
+  --color-accent-dark: #E04D6E;
+  --color-accent-green: #2ECC71;
+  --color-accent-yellow: #F1C40F;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #555555;
+  --color-text-muted: #999999;
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), "SF Mono", "Fira Code", monospace;
+  --font-serif: var(--font-playfair), "Georgia", "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", monospace;
 }
 
 html {
@@ -29,105 +31,100 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Glass effect ── */
-.glass {
-  background: rgba(17, 17, 24, 0.75);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+/* ── Headings ── */
+.heading-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-/* ── Gradient text ── */
-.gradient-text {
-  background: linear-gradient(135deg, #f0f0f5 0%, #FB6182 50%, #FFB4C5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ── Navbar ── */
+.nav-glass {
+  background: rgba(245, 240, 234, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* ── Accent glow on elements ── */
-.glow {
-  box-shadow: 0 0 30px rgba(251, 97, 130, 0.2), 0 0 60px rgba(251, 97, 130, 0.08);
+/* ── Buttons ── */
+.btn-primary {
+  background: var(--color-accent);
+  color: white;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.glow-subtle {
-  box-shadow: 0 0 20px rgba(251, 97, 130, 0.1), 0 0 40px rgba(251, 97, 130, 0.04);
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
 }
 
-/* ── Grid background ── */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 2px solid var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
-/* ── Radial fade / glow blobs ── */
-.radial-fade {
-  background: radial-gradient(ellipse at 50% 0%, rgba(251, 97, 130, 0.1) 0%, transparent 55%);
+.btn-outline:hover {
+  background: var(--color-text-primary);
+  color: var(--color-background);
 }
 
-.radial-fade-bottom {
-  background: radial-gradient(ellipse at 50% 100%, rgba(251, 97, 130, 0.08) 0%, transparent 55%);
-}
-
-/* ── Blob decorations ── */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.blob-pink {
-  background: rgba(251, 97, 130, 0.15);
-}
-
-.blob-purple {
-  background: rgba(120, 80, 220, 0.12);
-}
-
-/* ── Shine animation (Tavus-inspired) ── */
-@keyframes shine {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.shine-text {
-  background: linear-gradient(
-    90deg,
-    #f0f0f5 0%,
-    #FFB4C5 25%,
-    #FB6182 50%,
-    #FFB4C5 75%,
-    #f0f0f5 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shine 5s linear infinite;
-}
-
-/* ── Card hover lift ── */
-.card-hover {
+/* ── Cards ── */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
 }
-.card-hover:hover {
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
-  border-color: rgba(251, 97, 130, 0.25);
-  box-shadow: 0 8px 30px rgba(251, 97, 130, 0.08);
 }
 
-/* ── Typing cursor blink ── */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+/* ── Divider ── */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.cursor-blink {
-  animation: blink 1s step-end infinite;
+/* ── Tag pill ── */
+.tag {
+  border: 1px solid var(--color-border);
+  padding: 6px 16px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ── Section label ── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
 }
 
 /* ── Fade-in animation ── */
@@ -144,16 +141,6 @@ body {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-delay-100 { animation-delay: 0.1s; }
-.animate-delay-200 { animation-delay: 0.2s; }
-.animate-delay-300 { animation-delay: 0.3s; }
-.animate-delay-400 { animation-delay: 0.4s; }
-.animate-delay-500 { animation-delay: 0.5s; }
-
-/* Start invisible for delayed animations */
-.animate-fade-in-up {
   opacity: 0;
 }
 
@@ -173,4 +160,10 @@ body {
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(251, 97, 130, 0.2);
+  color: var(--color-text-primary);
 }
