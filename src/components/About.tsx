@@ -16,7 +16,7 @@ export function About() {
                 src="/matt-anderson.png"
                 alt="Matt Anderson — Pliant Mind"
                 fill
-                className="object-cover object-[center_15%] scale-[0.85]"
+                className="object-cover object-[center_15%] scale-[1.05]"
                 sizes="112px"
                 priority
               />
