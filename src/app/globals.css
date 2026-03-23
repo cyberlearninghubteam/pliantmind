@@ -31,75 +31,110 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Headings ── */
-.heading-serif {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
+/* ── Non-layer base styles ── */
 
-/* ── Navbar ── */
-.nav-glass {
-  background: rgba(245, 240, 234, 0.85);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-/* ── Buttons ── */
-.btn-primary {
-  background: var(--color-accent);
-  color: white;
-  padding: 12px 28px;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.2s ease;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background: var(--color-accent-dark);
-  transform: translateY(-1px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--color-text-primary);
-  padding: 12px 28px;
-  font-weight: 600;
-  font-size: 14px;
-  border: 2px solid var(--color-text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.2s ease;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.btn-outline:hover {
-  background: var(--color-text-primary);
-  color: var(--color-background);
-}
-
-/* ── Cards ── */
-.card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  border-color: var(--color-border-hover);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
-/* ── Window-style card (Tavus-inspired) ── */
+/* ── All custom component styles ── */
 @layer utilities {
+
+  /* ── Headings ── */
+  .heading-serif {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── Navbar ── */
+  .nav-glass {
+    background: rgba(245, 240, 234, 0.85);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* ── Tag pill ── */
+  .tag {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 6px 16px;
+    font-size: 12px;
+    color: #555555;
+    transition: all 0.2s ease;
+  }
+
+  .tag:hover {
+    border-color: #FB6182;
+    color: #FB6182;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #FB6182;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    background: #FB6182;
+    color: white;
+    padding: 12px 28px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background: #E04D6E;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #1A1A1A;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 12px;
+    border: 2px solid #1A1A1A;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    box-shadow: 3px 3px 0 #1A1A1A;
+    transition: all 0.15s ease;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    box-shadow: 1px 1px 0 #1A1A1A;
+    transform: translate(2px, 2px);
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  /* ── Window-style card (Tavus-inspired) ── */
   .card-window {
     background: var(--color-surface);
     border: 2px solid var(--color-text-primary);
@@ -195,34 +230,7 @@ body {
   }
 }
 
-/* ── Divider ── */
-.divider {
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-/* ── Tag pill ── */
-.tag {
-  border: 1px solid var(--color-border);
-  padding: 6px 16px;
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  transition: all 0.2s ease;
-}
-
-.tag:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-/* ── Section label ── */
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
-}
+/* (moved to @layer utilities) */
 
 /* ── Fade-in animation ── */
 @keyframes fadeInUp {
