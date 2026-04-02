@@ -21,13 +21,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Pliant Mind — AI & Automation Advisory",
+  title: "Pliant Mind — Learn to work with AI, not against it",
   description:
-    "Flexible, clear-eyed AI & automation advisory for businesses that want to move smarter. Book a session with Matt Anderson.",
+    "AI is changing every role. Pliant Mind helps professionals upskill, adapt, and thrive — with practical, role-based learning tracks that build real confidence.",
   openGraph: {
-    title: "Pliant Mind — AI & Automation Advisory",
+    title: "Pliant Mind — Learn to work with AI, not against it",
     description:
-      "Expert AI & automation transformation advisory for SMBs. Book your session today.",
+      "Practical AI upskilling for professionals. Role-based tracks, hands-on tools, real confidence.",
     type: "website",
   },
 };

@@ -4,40 +4,40 @@ const steps = [
   {
     number: "01",
     label: "STEP ONE",
-    title: "Book a Session",
+    title: "Take the assessment",
     description:
-      "Grab a time that works. The first 30-minute discovery call is on us — just a conversation about where you are and what's possible.",
+      "A quick quiz that maps your current AI confidence, identifies gaps, and recommends where to start. No signup required.",
     bg: "bg-[#FDDEC8]",
-    cta: { text: "Book Now", href: "#book", style: "btn-accent-pink" },
+    cta: { text: "Take Quiz", href: "#pricing", style: "btn-accent-pink" },
   },
   {
     number: "02",
     label: "STEP TWO",
-    title: "We Assess & Strategize",
+    title: "Follow your track",
     description:
-      "We dig into your operations with fresh eyes — surfacing quick wins, long-term plays, and the stuff you might be too close to see.",
+      "Bite-sized, practical lessons you can do in 15 minutes. Each one builds on the last — with real exercises, not just theory.",
     bg: "bg-[#DDD8F3]",
-    cta: { text: "Learn More", href: "#services", style: "btn-accent-purple" },
+    cta: { text: "See Tracks", href: "#tracks", style: "btn-accent-purple" },
   },
   {
     number: "03",
     label: "STEP THREE",
-    title: "You Transform",
+    title: "Apply it at work",
     description:
-      "You leave with a clear playbook — specific recommendations, tool picks, and implementation steps you can act on tomorrow.",
+      "Every lesson ends with a 'try this now' challenge. You'll be using AI in your actual job from day one — not just watching videos.",
     bg: "bg-[#C8E6C9]",
-    cta: { text: "Get Started", href: "#book", style: "btn-accent-green" },
+    cta: { text: "Get Started", href: "#pricing", style: "btn-accent-green" },
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="py-28 px-6">
+    <section id="how-it-works" className="py-28 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <span className="section-label">How it works</span>
           <h2 className="heading-serif text-[32px] md:text-[52px] mt-3 mb-4">
-            Clear thinking, zero fluff.
+            Learn by doing, not watching.
           </h2>
         </div>
 

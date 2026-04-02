@@ -26,7 +26,7 @@ export function LogoBar() {
     <section className="py-14 px-6 overflow-hidden border-t border-b border-border">
       <div className="mx-auto max-w-6xl">
         <p className="section-label text-center mb-10">
-          Trusted by teams at
+          Our learners come from
         </p>
 
         <div className="relative">

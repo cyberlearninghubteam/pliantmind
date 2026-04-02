@@ -1,19 +1,21 @@
 import { Hero } from "@/components/Hero";
 import { LogoBar } from "@/components/LogoBar";
-import { Services } from "@/components/Services";
+import { Tracks } from "@/components/Tracks";
 import { HowItWorks } from "@/components/HowItWorks";
-import { About } from "@/components/About";
-import { Booking } from "@/components/Booking";
+import { WhyPliantMind } from "@/components/WhyPliantMind";
+import { Pricing } from "@/components/Pricing";
+import { CTA } from "@/components/CTA";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <LogoBar />
-      <Services />
+      <Tracks />
       <HowItWorks />
-      <About />
-      <Booking />
+      <WhyPliantMind />
+      <Pricing />
+      <CTA />
     </>
   );
 }

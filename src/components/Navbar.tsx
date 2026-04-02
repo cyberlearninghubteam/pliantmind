@@ -5,9 +5,9 @@ import Link from "next/link";
 import { BrainLogo } from "./BrainLogo";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#book", label: "Book a Session" },
+  { href: "#tracks", label: "Tracks" },
+  { href: "#how-it-works", label: "How It Works" },
+  { href: "#pricing", label: "Pricing" },
 ];
 
 export function Navbar() {
@@ -45,7 +45,7 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="#book" className="btn-primary">
+          <a href="#pricing" className="btn-primary">
             Get Started
           </a>
         </div>
@@ -80,7 +80,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#book"
+            href="#pricing"
             onClick={() => setMobileOpen(false)}
             className="btn-primary block text-center"
           >

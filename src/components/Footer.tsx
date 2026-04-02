@@ -15,10 +15,10 @@ export function Footer() {
         </p>
         <div className="flex gap-6">
           <a
-            href="mailto:matt@pliantmind.com"
+            href="mailto:hello@pliantmind.com"
             className="text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
-            matt@pliantmind.com
+            hello@pliantmind.com
           </a>
         </div>
       </div>

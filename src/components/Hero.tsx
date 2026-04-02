@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const rotatingWords = [
-  "Clarity",
-  "Agility",
-  "Leverage",
-  "Momentum",
-  "Edge",
+  "Adapt",
+  "Evolve",
+  "Lead",
+  "Thrive",
+  "Create",
 ];
 
 export function Hero() {
@@ -30,44 +30,44 @@ export function Hero() {
         }`}
       >
         <span className="section-label mb-8 inline-block">
-          AI Advisory for Adaptive Businesses
+          AI upskilling for the rest of us
         </span>
 
         <h1 className="heading-serif text-[42px] md:text-[72px] mb-6">
-          Your business has
+          AI won&apos;t replace you.
           <br />
-          the potential.{" "}
-          <span className="text-accent">
+          Someone using it{" "}
+          <span className="text-accent italic">
             <span
               key={rotatingWords[wordIndex]}
               className="inline-block"
               style={{ animation: "fadeInUp 0.35s ease-out forwards" }}
             >
-              {rotatingWords[wordIndex]}.
+              will.
             </span>
           </span>
         </h1>
 
         <p className="mx-auto max-w-xl text-lg md:text-xl text-text-secondary mb-10 leading-relaxed">
-          Flexible, clear-eyed AI advisory that meets your business where it
-          is — and gets it where it needs to go.
+          Learn to work with AI, not against it. Practical, role-based
+          learning tracks that build real skills — not just hype.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#book" className="btn-accent-pink">
-            Book a Session
+          <a href="#pricing" className="btn-accent-pink">
+            Start Learning
           </a>
-          <a href="#services" className="btn-outline">
-            Explore Services
+          <a href="#tracks" className="btn-outline">
+            Explore Tracks
           </a>
         </div>
 
         {/* Stats row */}
         <div className="mt-20 grid grid-cols-3 gap-8 max-w-md mx-auto">
           {[
-            { value: "10+", label: "Years Experience" },
-            { value: "50+", label: "Businesses Transformed" },
-            { value: "3x", label: "Avg. Efficiency Gain" },
+            { value: "6", label: "Learning Tracks" },
+            { value: "40+", label: "Hands-On Lessons" },
+            { value: "Free", label: "To Get Started" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="heading-serif text-2xl md:text-3xl text-text-primary">
