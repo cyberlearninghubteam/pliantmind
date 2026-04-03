@@ -1,48 +1,48 @@
 export function BrainLogo({ size = 32, className = "", variant = "default" }: { size?: number; className?: string; variant?: "default" | "light" }) {
-  const bgColor = variant === "light" ? "rgba(255,255,255,0.1)" : "#6366F1";
-  const strokeColor = variant === "light" ? "#818CF8" : "white";
+  const isDark = variant === "light";
 
   return (
     <div
-      className={`rounded-xl flex items-center justify-center ${className}`}
-      style={{ width: size, height: size, background: bgColor }}
+      className={`rounded-2xl flex items-center justify-center ${className}`}
+      style={{
+        width: size,
+        height: size,
+        background: isDark
+          ? "rgba(255,255,255,0.1)"
+          : "linear-gradient(135deg, #6366F1 0%, #818CF8 100%)",
+        boxShadow: isDark ? "none" : "0 2px 0 0 #4F46E5",
+      }}
     >
       <svg
-        width={size * 0.6}
-        height={size * 0.6}
+        width={size * 0.55}
+        height={size * 0.55}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Stylised brain - two hemispheres as flowing curves */}
+        {/* Geometric brain — clean, Brilliant-style */}
+        {/* Left hemisphere */}
         <path
-          d="M12 3C8.5 3 6 5.5 5 8C3.5 8.5 2.5 10 2.5 12C2.5 14 3.5 15.5 5 16C5.5 18.5 8 21 12 21"
-          stroke={strokeColor}
-          strokeWidth="1.5"
+          d="M12 4C9 4 7 6 6.5 8.5C5 9 4 10.5 4 12.5C4 14.5 5.5 16 7 16.5C7.5 18.5 9.5 20 12 20"
+          stroke="white"
+          strokeWidth="1.8"
           strokeLinecap="round"
-          opacity="0.9"
+          strokeLinejoin="round"
         />
+        {/* Right hemisphere */}
         <path
-          d="M12 3C15.5 3 18 5.5 19 8C20.5 8.5 21.5 10 21.5 12C21.5 14 20.5 15.5 19 16C18.5 18.5 16 21 12 21"
-          stroke={strokeColor}
-          strokeWidth="1.5"
+          d="M12 4C15 4 17 6 17.5 8.5C19 9 20 10.5 20 12.5C20 14.5 18.5 16 17 16.5C16.5 18.5 14.5 20 12 20"
+          stroke="white"
+          strokeWidth="1.8"
           strokeLinecap="round"
-          opacity="0.9"
+          strokeLinejoin="round"
         />
-        {/* Neural connection lines */}
-        <path d="M12 3V21" stroke={strokeColor} strokeWidth="0.75" strokeDasharray="2 2" opacity="0.3" />
-        <path d="M8 7C10 8 12 8 12 8" stroke={strokeColor} strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-        <path d="M16 7C14 8 12 8 12 8" stroke={strokeColor} strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-        <path d="M6 12C8.5 12 12 13 12 13" stroke={strokeColor} strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-        <path d="M18 12C15.5 12 12 13 12 13" stroke={strokeColor} strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-        {/* Neural nodes */}
-        <circle cx="8" cy="7" r="1.5" fill={strokeColor} opacity="0.8" />
-        <circle cx="16" cy="7" r="1.5" fill={strokeColor} opacity="0.8" />
-        <circle cx="6" cy="12" r="1.5" fill={strokeColor} opacity="0.8" />
-        <circle cx="18" cy="12" r="1.5" fill={strokeColor} opacity="0.8" />
-        <circle cx="12" cy="13" r="2" fill={strokeColor} opacity="0.9" />
-        <circle cx="9" cy="17" r="1" fill={strokeColor} opacity="0.5" />
-        <circle cx="15" cy="17" r="1" fill={strokeColor} opacity="0.5" />
+        {/* Center synapse */}
+        <circle cx="12" cy="12" r="2" fill="white" opacity="0.9" />
+        {/* Neural connections */}
+        <line x1="12" y1="10" x2="12" y2="5" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
+        <line x1="10.3" y1="13" x2="7" y2="15" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
+        <line x1="13.7" y1="13" x2="17" y2="15" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
       </svg>
     </div>
   );
