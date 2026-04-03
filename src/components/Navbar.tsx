@@ -8,7 +8,6 @@ const navLinks = [
   { href: "/tracks", label: "Learn" },
   { href: "/business", label: "For Business" },
   { href: "/assessment", label: "Assessment" },
-  { href: "#pricing", label: "Pricing" },
 ];
 
 export function Navbar() {
