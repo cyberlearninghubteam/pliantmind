@@ -21,6 +21,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Before scroll: white text on dark hero. After scroll: dark text on glass bg.
+  const textColor = scrolled ? "text-text-primary" : "text-white";
+  const linkColor = scrolled ? "text-text-secondary hover:text-text-primary" : "text-white/70 hover:text-white";
+  const menuIconColor = scrolled ? "text-text-secondary" : "text-white/70";
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -30,7 +35,7 @@ export function Navbar() {
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
           <BrainLogo size={34} />
-          <span className="text-[16px] font-bold tracking-tight text-text-primary">
+          <span className={`text-[16px] font-bold tracking-tight transition-colors duration-300 ${textColor}`}>
             Pliant Mind
           </span>
         </Link>
@@ -41,7 +46,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors duration-200"
+              className={`text-[13px] font-medium transition-colors duration-300 ${linkColor}`}
             >
               {link.label}
             </a>
@@ -53,7 +58,7 @@ export function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-text-secondary"
+          className={`md:hidden transition-colors duration-300 ${menuIconColor}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
