@@ -21,13 +21,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Pliant Mind — Learn to work with AI, not against it",
+  title: "Pliant Mind — AI Transformation for People & Businesses",
   description:
-    "AI is changing every role. Pliant Mind helps professionals upskill, adapt, and thrive — with practical, role-based learning tracks that build real confidence.",
+    "Upskill your team with practical AI learning tracks or let us audit, build, and deploy AI solutions — voice agents, chatbots, automations — for your business.",
   openGraph: {
-    title: "Pliant Mind — Learn to work with AI, not against it",
+    title: "Pliant Mind — AI Transformation for People & Businesses",
     description:
-      "Practical AI upskilling for professionals. Role-based tracks, hands-on tools, real confidence.",
+      "Learn AI. Implement AI. Practical upskilling and business AI solutions — voice agents, chatbots, workflow automation.",
     type: "website",
   },
 };

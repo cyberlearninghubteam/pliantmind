@@ -7,7 +7,7 @@ export default function TracksPage() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <span className="section-label">All learning tracks</span>
-          <h1 className="heading-serif text-[36px] md:text-[52px] mt-3 mb-4">
+          <h1 className="heading-display text-[36px] md:text-[52px] mt-3 mb-4">
             Pick your path.
           </h1>
           <p className="text-text-secondary max-w-xl mx-auto text-lg">
@@ -36,7 +36,7 @@ export default function TracksPage() {
 
               {/* Dashed inner */}
               <div className="card-window-inner">
-                <h3 className="heading-serif text-[22px] md:text-[26px] mb-3 text-text-primary">
+                <h3 className="heading-display text-[22px] md:text-[26px] mb-3 text-text-primary">
                   {track.title}
                 </h3>
                 <p className="text-[13px] text-text-secondary leading-relaxed mb-4">

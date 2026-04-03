@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export function CTA() {
   const [email, setEmail] = useState("");
@@ -8,53 +9,54 @@ export function CTA() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-    }
+    if (email) setSubmitted(true);
   };
 
   return (
-    <section className="py-28 px-6 bg-surface-warm">
-      <div className="mx-auto max-w-3xl text-center">
-        <span className="section-label">Stay sharp</span>
-        <h2 className="heading-serif text-[32px] md:text-[52px] mt-3 mb-4">
-          The AI landscape changes weekly.
-          <br />
-          <span className="italic text-accent">You should too.</span>
+    <section className="py-24 px-6 bg-gradient-hero relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/20 rounded-full blur-3xl" />
+
+      <div className="mx-auto max-w-3xl text-center relative z-10">
+        <h2 className="heading-display text-[32px] md:text-[44px] text-white mb-4">
+          Ready to embrace AI?
         </h2>
-        <p className="text-text-secondary max-w-xl mx-auto text-lg mb-10">
-          Join the newsletter — a weekly dose of practical AI tips, new tool
-          breakdowns, and career strategy. No spam. Unsubscribe anytime.
+        <p className="text-text-on-dark-muted text-lg mb-10 max-w-lg mx-auto">
+          Whether you&apos;re upskilling yourself or transforming your business —
+          the best time to start was yesterday. The second best is now.
         </p>
 
-        {submitted ? (
-          <div className="card rounded-lg p-8 max-w-md mx-auto">
-            <div className="text-accent text-2xl mb-2">
-              <svg className="w-8 h-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <p className="heading-serif text-xl">You&apos;re in.</p>
-            <p className="text-sm text-text-secondary mt-1">Check your inbox for a welcome note.</p>
-          </div>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@company.com"
-              required
-              className="w-full sm:flex-1 px-4 py-3 border-2 border-text-primary bg-surface text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
-            />
-            <button type="submit" className="btn-accent-pink w-full sm:w-auto whitespace-nowrap">
-              Subscribe
-            </button>
-          </form>
-        )}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <Link href="/assessment" className="btn-primary text-[15px] px-8 py-3.5">
+            Take the Free Assessment
+          </Link>
+          <Link href="/business" className="btn-secondary-light text-[15px] px-8 py-3.5">
+            Book an AI Audit
+          </Link>
+        </div>
+
+        <div className="max-w-md mx-auto">
+          <p className="text-text-on-dark-muted text-sm mb-3">
+            Or join the newsletter — weekly AI tips, no spam.
+          </p>
+          {submitted ? (
+            <p className="text-accent-light text-sm font-medium">You&apos;re in. Check your inbox.</p>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@company.com"
+                required
+                className="flex-1 px-4 py-2.5 rounded-lg bg-white/10 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors"
+              />
+              <button type="submit" className="btn-primary text-sm py-2.5 px-5">
+                Subscribe
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     </section>
   );

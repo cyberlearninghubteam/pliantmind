@@ -5,9 +5,9 @@ import Link from "next/link";
 import { BrainLogo } from "./BrainLogo";
 
 const navLinks = [
-  { href: "/tracks", label: "Tracks" },
+  { href: "/tracks", label: "Learn" },
+  { href: "/business", label: "For Business" },
   { href: "/assessment", label: "Assessment" },
-  { href: "#how-it-works", label: "How It Works" },
   { href: "#pricing", label: "Pricing" },
 ];
 
@@ -24,13 +24,13 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "nav-glass" : "bg-transparent"
+        scrolled ? "nav-glass shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
-          <BrainLogo size={32} />
-          <span className="text-[15px] font-semibold tracking-tight text-text-primary">
+          <BrainLogo size={34} />
+          <span className="text-[16px] font-bold tracking-tight text-text-primary">
             Pliant Mind
           </span>
         </Link>
@@ -41,13 +41,13 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
+              className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
-          <a href="#pricing" className="btn-primary">
-            Get Started
+          <a href="/assessment" className="btn-primary text-[13px] py-2.5 px-5">
+            Get Started Free
           </a>
         </div>
 
@@ -81,11 +81,11 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#pricing"
+            href="/assessment"
             onClick={() => setMobileOpen(false)}
-            className="btn-primary block text-center"
+            className="btn-primary block text-center text-sm"
           >
-            Get Started
+            Get Started Free
           </a>
         </div>
       )}

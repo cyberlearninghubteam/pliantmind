@@ -31,13 +31,9 @@ export default async function LessonPage({
       <div className="mx-auto max-w-3xl">
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2 text-sm text-text-muted">
-          <Link href="/tracks" className="hover:text-accent transition-colors">
-            Tracks
-          </Link>
+          <Link href="/tracks" className="hover:text-accent transition-colors">Tracks</Link>
           <span>/</span>
-          <Link href={`/tracks/${track.slug}`} className="hover:text-accent transition-colors">
-            {track.title}
-          </Link>
+          <Link href={`/tracks/${track.slug}`} className="hover:text-accent transition-colors">{track.title}</Link>
           <span>/</span>
           <span className="text-text-secondary">{lesson.title}</span>
         </div>
@@ -55,7 +51,7 @@ export default async function LessonPage({
               </span>
             )}
           </div>
-          <h1 className="heading-serif text-[32px] md:text-[44px] mb-2">
+          <h1 className="heading-display text-[32px] md:text-[44px] mb-2">
             {lesson.title}
           </h1>
           <p className="text-text-secondary text-lg">{lesson.description}</p>
@@ -66,8 +62,8 @@ export default async function LessonPage({
         <LessonContent content={lesson.content} />
 
         {/* Key Takeaways */}
-        <div className="mt-12 card rounded-lg p-8 bg-surface-warm border-l-4" style={{ borderLeftColor: track.color }}>
-          <h3 className="heading-serif text-[20px] mb-4">Key Takeaways</h3>
+        <div className="mt-12 card p-8 bg-background-warm border-l-4" style={{ borderLeftColor: track.color }}>
+          <h3 className="heading-sans text-[20px] mb-4">Key Takeaways</h3>
           <ul className="space-y-2">
             {lesson.keyTakeaways.map((takeaway, i) => (
               <li key={i} className="flex items-start gap-2 text-[14px] text-text-secondary">
@@ -81,8 +77,8 @@ export default async function LessonPage({
         </div>
 
         {/* Try This Now */}
-        <div className="mt-6 card rounded-lg p-8" style={{ backgroundColor: `${track.color}10` }}>
-          <h3 className="heading-serif text-[20px] mb-3">Try This Now</h3>
+        <div className="mt-6 card p-8 rounded-xl" style={{ backgroundColor: `${track.color}08` }}>
+          <h3 className="heading-sans text-[20px] mb-3">Try This Now</h3>
           <p className="text-[14px] text-text-secondary leading-relaxed">
             {lesson.tryThisNow}
           </p>
@@ -103,12 +99,12 @@ export default async function LessonPage({
           {nextLesson ? (
             <Link
               href={`/tracks/${track.slug}/${nextLesson.slug}`}
-              className={track.btnStyle}
+              className="btn-primary text-sm"
             >
               Next: {nextLesson.title} &rarr;
             </Link>
           ) : (
-            <Link href={`/tracks/${track.slug}`} className={track.btnStyle}>
+            <Link href={`/tracks/${track.slug}`} className="btn-primary text-sm">
               Track Complete &rarr;
             </Link>
           )}

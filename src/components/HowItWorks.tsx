@@ -1,67 +1,62 @@
 "use client";
 
+import Link from "next/link";
+
 const steps = [
   {
     number: "01",
-    label: "STEP ONE",
-    title: "Take the assessment",
-    description:
-      "A quick quiz that maps your current AI confidence, identifies gaps, and recommends where to start. No signup required.",
-    bg: "bg-[#FDDEC8]",
-    cta: { text: "Take Quiz", href: "/assessment", style: "btn-accent-pink" },
+    title: "Assess",
+    description: "Take our free AI readiness quiz or book a business audit. Understand where you are and where the opportunities live.",
+    link: { text: "Take Assessment", href: "/assessment" },
+    color: "#6366F1",
   },
   {
     number: "02",
-    label: "STEP TWO",
-    title: "Follow your track",
-    description:
-      "Bite-sized, practical lessons you can do in 15 minutes. Each one builds on the last — with real exercises, not just theory.",
-    bg: "bg-[#DDD8F3]",
-    cta: { text: "See Tracks", href: "/tracks", style: "btn-accent-purple" },
+    title: "Learn or Build",
+    description: "Follow structured learning tracks to upskill yourself — or work with us to design and deploy AI solutions for your business.",
+    link: { text: "Explore Tracks", href: "/tracks" },
+    color: "#06B6D4",
   },
   {
     number: "03",
-    label: "STEP THREE",
-    title: "Apply it at work",
-    description:
-      "Every lesson ends with a 'try this now' challenge. You'll be using AI in your actual job from day one — not just watching videos.",
-    bg: "bg-[#C8E6C9]",
-    cta: { text: "Get Started", href: "#pricing", style: "btn-accent-green" },
+    title: "Transform",
+    description: "Apply what you learn immediately. Every lesson includes a real-world challenge. Every business engagement delivers working solutions.",
+    link: { text: "Get Started", href: "/assessment" },
+    color: "#10B981",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-28 px-6">
+    <section id="how-it-works" className="py-24 px-6 bg-background-warm">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <span className="section-label">How it works</span>
-          <h2 className="heading-serif text-[32px] md:text-[52px] mt-3 mb-4">
-            Learn by doing, not watching.
+          <span className="section-label text-accent mb-3 block">How it works</span>
+          <h2 className="heading-display text-[32px] md:text-[44px]">
+            Three steps. Real results.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-6">
           {steps.map((step) => (
-            <div
-              key={step.number}
-              className={`${step.bg} rounded-lg p-8 md:p-10 flex flex-col items-center text-center min-h-[320px] justify-center`}
-            >
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-text-secondary mb-4">
-                {step.label}
-              </span>
-
-              <h3 className="heading-serif text-[26px] md:text-[32px] italic mb-4 text-text-primary">
-                {step.title}
-              </h3>
-
-              <p className="text-[13px] text-text-secondary leading-relaxed mb-6 max-w-[280px]">
+            <div key={step.number} className="text-center md:text-left">
+              <div
+                className="text-[48px] heading-display mb-4"
+                style={{ color: step.color, opacity: 0.3 }}
+              >
+                {step.number}
+              </div>
+              <h3 className="heading-sans text-[22px] mb-3">{step.title}</h3>
+              <p className="text-[14px] text-text-secondary leading-relaxed mb-4">
                 {step.description}
               </p>
-
-              <a href={step.cta.href} className={step.cta.style}>
-                {step.cta.text}
-              </a>
+              <Link
+                href={step.link.href}
+                className="text-[13px] font-semibold hover:underline transition-colors"
+                style={{ color: step.color }}
+              >
+                {step.link.text} &rarr;
+              </Link>
             </div>
           ))}
         </div>

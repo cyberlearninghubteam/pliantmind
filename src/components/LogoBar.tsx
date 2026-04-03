@@ -23,10 +23,10 @@ const logos = [
 
 export function LogoBar() {
   return (
-    <section className="py-14 px-6 overflow-hidden border-t border-b border-border">
+    <section className="py-12 px-6 overflow-hidden bg-background-warm">
       <div className="mx-auto max-w-6xl">
-        <p className="section-label text-center mb-10">
-          Our learners come from
+        <p className="section-label text-text-muted text-center mb-8">
+          Trusted by professionals from
         </p>
 
         <div className="relative">
@@ -34,14 +34,14 @@ export function LogoBar() {
             {[...logos, ...logos].map((logo, i) => (
               <div
                 key={`${logo.alt}-${i}`}
-                className="flex-shrink-0 flex items-center justify-center h-8 w-[110px] relative opacity-70 hover:opacity-100 transition-all duration-300"
+                className="flex-shrink-0 flex items-center justify-center h-7 w-[100px] relative opacity-50 hover:opacity-80 transition-all duration-300"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   fill
                   className="object-contain"
-                  sizes="110px"
+                  sizes="100px"
                 />
               </div>
             ))}

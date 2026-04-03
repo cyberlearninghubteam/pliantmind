@@ -29,7 +29,7 @@ export default async function TrackPage({ params }: { params: Promise<{ slug: st
               {track.label}
             </span>
           </div>
-          <h1 className="heading-serif text-[36px] md:text-[52px] mb-4">
+          <h1 className="heading-display text-[36px] md:text-[52px] mb-4">
             {track.title}
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed">
@@ -46,7 +46,7 @@ export default async function TrackPage({ params }: { params: Promise<{ slug: st
             <Link
               key={lesson.slug}
               href={`/tracks/${track.slug}/${lesson.slug}`}
-              className="card rounded-lg p-6 flex items-start gap-4 hover:border-accent/30 transition-all block group"
+              className="card p-6 flex items-start gap-4 block group"
             >
               <div
                 className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
@@ -56,7 +56,7 @@ export default async function TrackPage({ params }: { params: Promise<{ slug: st
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <h3 className="heading-serif text-[18px] group-hover:text-accent transition-colors">
+                  <h3 className="heading-sans text-[18px] group-hover:text-accent transition-colors">
                     {lesson.title}
                   </h3>
                   {!lesson.free && (
@@ -78,7 +78,7 @@ export default async function TrackPage({ params }: { params: Promise<{ slug: st
         <div className="mt-12 text-center">
           <Link
             href={`/tracks/${track.slug}/${track.lessons[0].slug}`}
-            className={track.btnStyle}
+            className="btn-primary text-[15px] px-8 py-3.5"
           >
             Start This Track
           </Link>

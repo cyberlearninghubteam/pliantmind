@@ -1,8 +1,8 @@
 import { Hero } from "@/components/Hero";
 import { LogoBar } from "@/components/LogoBar";
 import { Tracks } from "@/components/Tracks";
+import { BusinessSection } from "@/components/BusinessSection";
 import { HowItWorks } from "@/components/HowItWorks";
-import { WhyPliantMind } from "@/components/WhyPliantMind";
 import { Pricing } from "@/components/Pricing";
 import { CTA } from "@/components/CTA";
 
@@ -12,8 +12,8 @@ export default function Home() {
       <Hero />
       <LogoBar />
       <Tracks />
+      <BusinessSection />
       <HowItWorks />
-      <WhyPliantMind />
       <Pricing />
       <CTA />
     </>

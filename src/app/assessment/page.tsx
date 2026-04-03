@@ -36,7 +36,7 @@ export default function AssessmentPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6">
               {result.level}
             </div>
-            <h1 className="heading-serif text-[32px] md:text-[48px] mb-4">
+            <h1 className="heading-display text-[32px] md:text-[48px] mb-4">
               {result.headline}
             </h1>
             <p className="text-text-secondary text-lg leading-relaxed">
@@ -60,7 +60,7 @@ export default function AssessmentPage() {
 
           {/* Recommended tracks */}
           <div className="mb-8">
-            <h2 className="heading-serif text-[24px] mb-4">Your recommended tracks</h2>
+            <h2 className="heading-display text-[24px] mb-4">Your recommended tracks</h2>
             <div className="space-y-4">
               {recommendedTracks.map((track) => track && (
                 <Link
@@ -73,7 +73,7 @@ export default function AssessmentPage() {
                     <span className="text-[11px] font-bold tracking-widest uppercase text-text-muted">
                       {track.label}
                     </span>
-                    <h3 className="heading-serif text-[20px] mt-1">{track.title}</h3>
+                    <h3 className="heading-display text-[20px] mt-1">{track.title}</h3>
                     <p className="text-[13px] text-text-secondary mt-1">{track.description}</p>
                     <span className="text-[12px] text-accent font-semibold mt-2 inline-block">
                       {track.lessons.length} lessons &rarr;
@@ -85,7 +85,7 @@ export default function AssessmentPage() {
           </div>
 
           <div className="text-center space-y-3">
-            <Link href="/tracks" className="btn-accent-pink inline-block">
+            <Link href="/tracks" className="btn-primary inline-block">
               View All Tracks
             </Link>
             <button
@@ -105,14 +105,14 @@ export default function AssessmentPage() {
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="mx-auto max-w-xl text-center">
           <span className="section-label mb-6 inline-block">AI Readiness Assessment</span>
-          <h1 className="heading-serif text-[36px] md:text-[52px] mb-4">
+          <h1 className="heading-display text-[36px] md:text-[52px] mb-4">
             How AI-ready are you?
           </h1>
           <p className="text-text-secondary text-lg mb-8 leading-relaxed">
             10 quick questions. No signup required. Get a personalised score
             and learning recommendations in under 3 minutes.
           </p>
-          <button onClick={() => setStarted(true)} className="btn-accent-pink">
+          <button onClick={() => setStarted(true)} className="btn-primary">
             Start Assessment
           </button>
         </div>
@@ -141,7 +141,7 @@ export default function AssessmentPage() {
 
         {/* Question */}
         <div key={q.id} className="animate-fade-in-up">
-          <h2 className="heading-serif text-[24px] md:text-[32px] mb-8">
+          <h2 className="heading-display text-[24px] md:text-[32px] mb-8">
             {q.question}
           </h2>
 
