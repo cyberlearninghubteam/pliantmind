@@ -31,7 +31,7 @@ const solutions = [
 
 export function BusinessSection() {
   return (
-    <section className="py-24 px-6 bg-surface-dark">
+    <section id="implement" className="py-24 px-6 bg-surface-dark">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
           <div>

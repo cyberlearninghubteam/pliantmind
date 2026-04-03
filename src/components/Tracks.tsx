@@ -61,7 +61,7 @@ const tracks = [
 
 export function Tracks() {
   return (
-    <section id="tracks" className="py-24 px-6">
+    <section id="learn" className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
           <div>
