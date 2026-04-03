@@ -42,14 +42,18 @@ export function Hero() {
         <h1 className="heading-display text-[40px] md:text-[68px] mb-6 text-white">
           Learn AI. Implement AI.
           <br />
-          <span className="bg-gradient-accent bg-clip-text text-transparent">
-            <span
-              key={rotatingWords[wordIndex]}
-              className="inline-block capitalize"
-              style={{ animation: "fadeInUp 0.35s ease-out forwards" }}
-            >
-              {rotatingWords[wordIndex]}.
-            </span>
+          <span
+            key={rotatingWords[wordIndex]}
+            className="inline-block capitalize"
+            style={{
+              background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              animation: "fadeInUp 0.35s ease-out forwards",
+            }}
+          >
+            {rotatingWords[wordIndex]}.
           </span>
         </h1>
 
