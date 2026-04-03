@@ -7,7 +7,7 @@ const tracks = [
     title: "AI Essentials",
     description:
       "Understand what AI actually is, what it can and can't do, and how it's reshaping work. No jargon, no hype — just the mental models you need to make smart decisions.",
-    cta: { text: "Start Free", href: "#pricing", style: "btn-accent-green" },
+    cta: { text: "Start Free", href: "/tracks/ai-essentials", style: "btn-accent-green" },
   },
   {
     dot: "dot-yellow",
@@ -15,7 +15,7 @@ const tracks = [
     title: "AI-Powered Workflows",
     description:
       "Master the tools that 10x your output. Learn to use ChatGPT, Claude, Copilot, and automation platforms to eliminate busywork and focus on what actually matters.",
-    cta: { text: "Start Free", href: "#pricing", style: "btn-accent-yellow" },
+    cta: { text: "Start Free", href: "/tracks/ai-powered-workflows", style: "btn-accent-yellow" },
   },
   {
     dot: "dot-pink",
@@ -23,7 +23,7 @@ const tracks = [
     title: "Prompt Engineering",
     description:
       "The skill gap isn't technical — it's knowing how to talk to AI. Learn to write prompts that get precise, useful results every time, across any tool.",
-    cta: { text: "Start Free", href: "#pricing", style: "btn-accent-pink" },
+    cta: { text: "Start Free", href: "/tracks/prompt-engineering", style: "btn-accent-pink" },
   },
   {
     dot: "dot-purple",
@@ -31,7 +31,7 @@ const tracks = [
     title: "AI for Leaders",
     description:
       "For managers and team leads: how to evaluate AI tools, build an adoption strategy, upskill your team, and make the case to leadership — without the buzzwords.",
-    cta: { text: "Start Free", href: "#pricing", style: "btn-accent-purple" },
+    cta: { text: "Start Free", href: "/tracks/ai-for-leaders", style: "btn-accent-purple" },
   },
   {
     dot: "dot-orange",
@@ -39,7 +39,7 @@ const tracks = [
     title: "Build with No-Code AI",
     description:
       "Build AI-powered apps, automations, and tools without writing code. From chatbots to data pipelines — learn to prototype and ship real solutions in days, not months.",
-    cta: { text: "Start Free", href: "#pricing", style: "btn-accent-orange" },
+    cta: { text: "Start Free", href: "/tracks/build-with-no-code", style: "btn-accent-orange" },
   },
   {
     dot: "dot-teal",
@@ -47,7 +47,7 @@ const tracks = [
     title: "Future-Proof Skills",
     description:
       "AI can't replace creativity, judgment, or leadership. This track builds the human skills that become more valuable as AI handles the routine — critical thinking, storytelling, and strategic decision-making.",
-    cta: { text: "Start Free", href: "#pricing", style: "btn-accent-teal" },
+    cta: { text: "Start Free", href: "/tracks/future-proof-skills", style: "btn-accent-teal" },
   },
 ];
 

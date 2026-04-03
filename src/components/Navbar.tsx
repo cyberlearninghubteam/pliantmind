@@ -5,7 +5,8 @@ import Link from "next/link";
 import { BrainLogo } from "./BrainLogo";
 
 const navLinks = [
-  { href: "#tracks", label: "Tracks" },
+  { href: "/tracks", label: "Tracks" },
+  { href: "/assessment", label: "Assessment" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#pricing", label: "Pricing" },
 ];

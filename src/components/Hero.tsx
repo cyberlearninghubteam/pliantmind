@@ -54,10 +54,10 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#pricing" className="btn-accent-pink">
-            Start Learning
+          <a href="/assessment" className="btn-accent-pink">
+            Take the Free Assessment
           </a>
-          <a href="#tracks" className="btn-outline">
+          <a href="/tracks" className="btn-outline">
             Explore Tracks
           </a>
         </div>

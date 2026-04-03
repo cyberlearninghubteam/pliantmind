@@ -8,7 +8,7 @@ const steps = [
     description:
       "A quick quiz that maps your current AI confidence, identifies gaps, and recommends where to start. No signup required.",
     bg: "bg-[#FDDEC8]",
-    cta: { text: "Take Quiz", href: "#pricing", style: "btn-accent-pink" },
+    cta: { text: "Take Quiz", href: "/assessment", style: "btn-accent-pink" },
   },
   {
     number: "02",
@@ -17,7 +17,7 @@ const steps = [
     description:
       "Bite-sized, practical lessons you can do in 15 minutes. Each one builds on the last — with real exercises, not just theory.",
     bg: "bg-[#DDD8F3]",
-    cta: { text: "See Tracks", href: "#tracks", style: "btn-accent-purple" },
+    cta: { text: "See Tracks", href: "/tracks", style: "btn-accent-purple" },
   },
   {
     number: "03",
