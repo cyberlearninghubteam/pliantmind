@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tracks, getLesson } from "@/lib/tracks";
 import { LessonContent } from "@/components/LessonContent";
+import { PageShell } from "@/components/PageShell";
 
 export function generateStaticParams() {
   return tracks.flatMap((track) =>
@@ -27,6 +28,7 @@ export default async function LessonPage({
   const nextLesson = lessonIndex < track.lessons.length - 1 ? track.lessons[lessonIndex + 1] : null;
 
   return (
+    <PageShell>
     <div className="min-h-screen pt-28 pb-20 px-6">
       <div className="mx-auto max-w-3xl">
         {/* Breadcrumb */}
@@ -111,5 +113,6 @@ export default async function LessonPage({
         </div>
       </div>
     </div>
+    </PageShell>
   );
 }

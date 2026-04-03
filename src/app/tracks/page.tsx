@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { tracks } from "@/lib/tracks";
+import { PageShell } from "@/components/PageShell";
 
 export default function TracksPage() {
   return (
+    <PageShell>
     <div className="min-h-screen pt-28 pb-20 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
@@ -56,5 +58,6 @@ export default function TracksPage() {
         </div>
       </div>
     </div>
+    </PageShell>
   );
 }

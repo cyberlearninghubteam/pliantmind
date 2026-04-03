@@ -3,22 +3,38 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export function Hero() {
+interface HeroProps {
+  onSelect: (path: "learn" | "implement") => void;
+  selected: "learn" | "implement" | null;
+}
+
+export function Hero({ onSelect, selected }: HeroProps) {
   const [hovered, setHovered] = useState<"left" | "right" | null>(null);
-  const [selected, setSelected] = useState<"learn" | "implement" | null>(null);
 
   const handleSelect = (side: "learn" | "implement") => {
-    setSelected(side);
-    const target = side === "learn" ? "#learn" : "#implement";
-    document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
+    onSelect(side);
+    // Small delay to let content render before scrolling
+    setTimeout(() => {
+      const target = side === "learn" ? "#learn" : "#implement";
+      document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 
   return (
-    <section className="relative min-h-[100vh] md:min-h-[95vh] flex flex-col">
+    <section className={`relative flex flex-col transition-all duration-500 ${
+      selected ? "min-h-[60vh] md:min-h-[50vh]" : "min-h-[100vh] md:min-h-[95vh]"
+    }`}>
       {/* Top bar with tagline */}
       <div className="absolute top-0 left-0 right-0 z-20 text-center pt-24 pb-6 pointer-events-none">
         <span className="section-label text-white/50 text-[11px]">
-          Choose your path
+          {selected ? (
+            <button
+              className="pointer-events-auto cursor-pointer hover:text-white/80 transition-colors"
+              onClick={() => onSelect(selected === "learn" ? "implement" : "learn")}
+            >
+              Switch to {selected === "learn" ? "Implement AI" : "Learn AI"} →
+            </button>
+          ) : "Choose your path"}
         </span>
       </div>
 
@@ -27,8 +43,11 @@ export function Hero() {
 
         {/* LEFT BRAIN — Learn */}
         <div
-          className={`relative flex-1 flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-500 ease-out ${
-            hovered === "right" ? "md:flex-[0.85]" : hovered === "left" ? "md:flex-[1.15]" : ""
+          className={`relative flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-500 ease-out ${
+            selected === "implement" ? "hidden md:flex md:flex-[0] md:opacity-0 md:pointer-events-none" :
+            selected === "learn" ? "flex-1" :
+            hovered === "right" ? "flex-1 md:flex-[0.85]" :
+            hovered === "left" ? "flex-1 md:flex-[1.15]" : "flex-1"
           }`}
           style={{
             background: "linear-gradient(160deg, #0F1629 0%, #1a1f3a 40%, #1e2340 100%)",
@@ -102,7 +121,9 @@ export function Hero() {
         </div>
 
         {/* Center divider — brain stem */}
-        <div className="hidden md:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 z-10 items-center">
+        <div className={`hidden md:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 z-10 items-center transition-opacity duration-500 ${
+          selected ? "opacity-0 pointer-events-none" : ""
+        }`}>
           <div className="w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="w-12 h-12 rounded-full bg-[#1a1f3a] border border-white/10 flex items-center justify-center shadow-xl">
@@ -132,14 +153,19 @@ export function Hero() {
         </div>
 
         {/* Mobile divider */}
-        <div className="md:hidden flex items-center justify-center py-3" style={{ background: "linear-gradient(90deg, #1a1f3a, #0f2130)" }}>
-          <span className="text-[10px] tracking-[0.15em] uppercase text-white/30">or</span>
-        </div>
+        {!selected && (
+          <div className="md:hidden flex items-center justify-center py-3" style={{ background: "linear-gradient(90deg, #1a1f3a, #0f2130)" }}>
+            <span className="text-[10px] tracking-[0.15em] uppercase text-white/30">or</span>
+          </div>
+        )}
 
         {/* RIGHT BRAIN — Implement */}
         <div
-          className={`relative flex-1 flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-500 ease-out ${
-            hovered === "left" ? "md:flex-[0.85]" : hovered === "right" ? "md:flex-[1.15]" : ""
+          className={`relative flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-500 ease-out ${
+            selected === "learn" ? "hidden md:flex md:flex-[0] md:opacity-0 md:pointer-events-none" :
+            selected === "implement" ? "flex-1" :
+            hovered === "left" ? "flex-1 md:flex-[0.85]" :
+            hovered === "right" ? "flex-1 md:flex-[1.15]" : "flex-1"
           }`}
           style={{
             background: "linear-gradient(200deg, #0a1628 0%, #0f2130 40%, #112435 100%)",

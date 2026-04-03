@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageShell } from "@/components/PageShell";
 
 const solutions = [
   {
@@ -41,6 +42,7 @@ const process = [
 
 export default function BusinessPage() {
   return (
+    <PageShell>
     <div>
       {/* Hero */}
       <section className="bg-gradient-hero pt-32 pb-20 px-6 relative overflow-hidden">
@@ -178,5 +180,6 @@ export default function BusinessPage() {
         </div>
       </section>
     </div>
+    </PageShell>
   );
 }

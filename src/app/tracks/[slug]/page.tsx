@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tracks, getTrack } from "@/lib/tracks";
+import { PageShell } from "@/components/PageShell";
 
 export function generateStaticParams() {
   return tracks.map((track) => ({ slug: track.slug }));
@@ -12,6 +13,7 @@ export default async function TrackPage({ params }: { params: Promise<{ slug: st
   if (!track) notFound();
 
   return (
+    <PageShell>
     <div className="min-h-screen pt-28 pb-20 px-6">
       <div className="mx-auto max-w-3xl">
         {/* Breadcrumb */}
@@ -85,5 +87,6 @@ export default async function TrackPage({ params }: { params: Promise<{ slug: st
         </div>
       </div>
     </div>
+    </PageShell>
   );
 }
