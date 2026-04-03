@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { BrainLogo } from "@/components/BrainLogo";
 
-// Animated spark that fires along a path
 function Spark({ delay, duration, color, path }: { delay: number; duration: number; color: string; path: string }) {
   return (
     <circle r="2.5" fill={color} opacity="0">
@@ -28,22 +27,23 @@ export default function Home() {
       className="fixed inset-0 flex flex-col items-center justify-center overflow-auto"
       style={{ background: "linear-gradient(160deg, #0F1629 0%, #151a30 50%, #0f1e2d 100%)" }}
     >
-      {/* Subtle background */}
+      {/* Background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute top-1/3 left-1/3 w-96 h-96 rounded-full blur-3xl transition-opacity duration-700 ${hovered === "left" ? "opacity-20" : "opacity-5"}`} style={{ background: "#6366F1" }} />
-        <div className={`absolute bottom-1/3 right-1/3 w-96 h-96 rounded-full blur-3xl transition-opacity duration-700 ${hovered === "right" ? "opacity-20" : "opacity-5"}`} style={{ background: "#06B6D4" }} />
+        <div className={`absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl transition-opacity duration-700 ${hovered === "left" ? "opacity-15" : "opacity-[0.03]"}`} style={{ background: "#6366F1" }} />
+        <div className={`absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl transition-opacity duration-700 ${hovered === "right" ? "opacity-15" : "opacity-[0.03]"}`} style={{ background: "#06B6D4" }} />
       </div>
 
-      <div className={`relative z-10 flex flex-col items-center px-4 w-full max-w-4xl mx-auto transition-all duration-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+      <div className={`relative z-10 flex flex-col items-center px-4 w-full transition-all duration-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
 
-        {/* Logo + brand */}
-        <BrainLogo size={48} className="mb-3" />
-        <h1 className="heading-display text-[24px] md:text-[32px] text-white mb-1">Pliant Mind</h1>
-        <p className="text-white/35 text-[13px] mb-10">AI transformation for people &amp; businesses</p>
+        {/* Logo + brand — compact */}
+        <div className="flex items-center gap-2 mb-8">
+          <BrainLogo size={32} />
+          <span className="heading-display text-[20px] text-white">Pliant Mind</span>
+        </div>
 
-        {/* Brain SVG — two hemispheres */}
-        <div className="relative w-full max-w-[600px] aspect-[600/420]">
-          <svg viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        {/* Brain SVG — large, anatomical */}
+        <div className="relative w-full max-w-[700px] aspect-[700/520] mx-auto">
+          <svg viewBox="0 0 700 520" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
 
             {/* ── LEFT HEMISPHERE ── */}
             <Link href="/learn">
@@ -52,80 +52,96 @@ export default function Home() {
                 onMouseEnter={() => setHovered("left")}
                 onMouseLeave={() => setHovered(null)}
               >
-                {/* Brain shape — left half */}
+                {/* Outer brain shape — left, more anatomical with bumps */}
                 <path
-                  d="M298 50 C230 50 170 80 140 130 C100 140 70 180 70 220 C70 270 100 310 140 320 C150 370 190 400 250 400 L298 400 L298 50Z"
-                  fill={hovered === "left" ? "rgba(99,102,241,0.12)" : "rgba(99,102,241,0.05)"}
-                  stroke={hovered === "left" ? "rgba(99,102,241,0.5)" : "rgba(99,102,241,0.15)"}
-                  strokeWidth="2"
+                  d="M345 40
+                     C300 38 260 50 230 75
+                     C195 95 165 125 145 165
+                     C115 175 85 210 80 255
+                     C72 305 90 350 120 380
+                     C130 415 155 445 195 465
+                     C225 480 265 488 310 490
+                     L345 490
+                     L345 40Z"
+                  fill={hovered === "left" ? "rgba(99,102,241,0.10)" : "rgba(99,102,241,0.03)"}
+                  stroke={hovered === "left" ? "rgba(99,102,241,0.45)" : "rgba(99,102,241,0.12)"}
+                  strokeWidth="1.5"
                   className="transition-all duration-500"
                 />
 
-                {/* Inner folds */}
-                <path d="M280 90 C220 100 180 140 160 180" stroke={hovered === "left" ? "rgba(99,102,241,0.35)" : "rgba(99,102,241,0.12)"} strokeWidth="1.5" strokeLinecap="round" className="transition-all duration-500" />
-                <path d="M280 160 C210 170 150 220 130 260" stroke={hovered === "left" ? "rgba(99,102,241,0.3)" : "rgba(99,102,241,0.1)"} strokeWidth="1.5" strokeLinecap="round" className="transition-all duration-500" />
-                <path d="M280 240 C230 250 190 290 170 330" stroke={hovered === "left" ? "rgba(99,102,241,0.25)" : "rgba(99,102,241,0.08)"} strokeWidth="1.5" strokeLinecap="round" className="transition-all duration-500" />
+                {/* Frontal lobe bump */}
+                <path
+                  d="M230 75 C200 60 160 65 140 90 C120 115 115 145 145 165"
+                  stroke={hovered === "left" ? "rgba(99,102,241,0.35)" : "rgba(99,102,241,0.1)"}
+                  strokeWidth="1.2" strokeLinecap="round" fill="none"
+                  className="transition-all duration-500"
+                />
 
-                {/* Neural paths for sparks */}
+                {/* Sulci — brain folds */}
+                <path d="M320 80 C260 100 210 150 175 200" stroke={hovered === "left" ? "rgba(99,102,241,0.30)" : "rgba(99,102,241,0.08)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M330 140 C270 155 200 210 160 270" stroke={hovered === "left" ? "rgba(99,102,241,0.25)" : "rgba(99,102,241,0.07)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M335 210 C280 225 220 275 175 335" stroke={hovered === "left" ? "rgba(99,102,241,0.22)" : "rgba(99,102,241,0.06)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M335 290 C290 305 245 345 210 395" stroke={hovered === "left" ? "rgba(99,102,241,0.18)" : "rgba(99,102,241,0.05)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M335 360 C300 370 265 400 240 440" stroke={hovered === "left" ? "rgba(99,102,241,0.15)" : "rgba(99,102,241,0.04)"} strokeWidth="1" strokeLinecap="round" className="transition-all duration-500" />
+
+                {/* Neural paths */}
                 <defs>
-                  <path id="l-path-1" d="M270 120 C220 130 180 160 155 195" />
-                  <path id="l-path-2" d="M260 200 C210 210 160 250 140 290" />
-                  <path id="l-path-3" d="M270 300 C230 310 200 340 185 370" />
+                  <path id="l-p1" d="M310 100 C250 120 200 165 175 210" />
+                  <path id="l-p2" d="M320 180 C260 200 190 250 160 310" />
+                  <path id="l-p3" d="M330 270 C280 290 230 340 200 400" />
+                  <path id="l-p4" d="M310 350 C270 370 240 410 225 455" />
                 </defs>
 
                 {/* Nodes */}
-                <circle cx="270" cy="120" r={hovered === "left" ? "5" : "3.5"} fill="#6366F1" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+                <circle cx="310" cy="100" r={hovered === "left" ? "5" : "3"} fill="#6366F1" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="155" cy="195" r={hovered === "left" ? "4" : "3"} fill="#818CF8" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3.5s" begin="0.5s" repeatCount="indefinite" />
+                <circle cx="175" cy="210" r={hovered === "left" ? "4.5" : "2.5"} fill="#818CF8" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" begin="0.5s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="260" cy="200" r={hovered === "left" ? "5" : "3.5"} fill="#6366F1" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" begin="1s" repeatCount="indefinite" />
+                <circle cx="320" cy="180" r={hovered === "left" ? "4" : "2.5"} fill="#6366F1" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" begin="1s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="140" cy="290" r={hovered === "left" ? "4" : "3"} fill="#A5B4FC" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" begin="1.5s" repeatCount="indefinite" />
+                <circle cx="160" cy="310" r={hovered === "left" ? "4" : "2.5"} fill="#A5B4FC" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="1.5s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="270" cy="300" r={hovered === "left" ? "4.5" : "3"} fill="#818CF8" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" begin="2s" repeatCount="indefinite" />
+                <circle cx="330" cy="270" r={hovered === "left" ? "4.5" : "3"} fill="#818CF8" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" begin="2s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="185" cy="370" r="2.5" fill="#A5B4FC">
+                <circle cx="200" cy="400" r={hovered === "left" ? "3.5" : "2"} fill="#A5B4FC" className="transition-all duration-300">
                   <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4.5s" begin="0.8s" repeatCount="indefinite" />
                 </circle>
+                <circle cx="310" cy="350" r={hovered === "left" ? "3.5" : "2"} fill="#6366F1" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.8s" begin="2.5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="225" cy="455" r="2" fill="#C7D2FE">
+                  <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" begin="1s" repeatCount="indefinite" />
+                </circle>
 
-                {/* Sparks */}
-                <Spark delay={0} duration={2.2} color="#818CF8" path="l-path-1" />
-                <Spark delay={1.5} duration={2.8} color="#6366F1" path="l-path-2" />
-                <Spark delay={3} duration={2.5} color="#A5B4FC" path="l-path-3" />
+                {/* Sparks firing */}
+                <Spark delay={0} duration={2.2} color="#818CF8" path="l-p1" />
+                <Spark delay={1.2} duration={2.8} color="#6366F1" path="l-p2" />
+                <Spark delay={2.5} duration={2.5} color="#A5B4FC" path="l-p3" />
+                <Spark delay={3.8} duration={2.3} color="#818CF8" path="l-p4" />
 
-                {/* Text overlay */}
-                <foreignObject x="85" y="130" width="200" height="200">
-                  <div className="flex flex-col items-center justify-center h-full text-center px-2">
-                    <svg className={`w-7 h-7 mb-2 transition-all duration-300 ${hovered === "left" ? "text-indigo-400 scale-110" : "text-indigo-400/50"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
-                    </svg>
-                    <span className={`heading-display text-[20px] md:text-[26px] transition-all duration-300 ${hovered === "left" ? "text-white scale-105" : "text-white/70"}`}>
-                      Learn AI
-                    </span>
-                    <span className={`text-[10px] md:text-[11px] mt-1.5 transition-all duration-300 leading-relaxed ${hovered === "left" ? "text-white/60" : "text-white/30"}`}>
-                      Upskill yourself with practical, role-based tracks
-                    </span>
-                    <div className={`flex gap-1.5 mt-3 transition-all duration-300 ${hovered === "left" ? "opacity-100" : "opacity-0"}`}>
-                      {["6 Tracks", "Free"].map((t) => (
-                        <span key={t} className="text-[8px] px-2 py-0.5 rounded-full border border-indigo-400/30 text-indigo-300">{t}</span>
-                      ))}
-                    </div>
-                  </div>
-                </foreignObject>
+                {/* Label — just the text, centered in hemisphere */}
+                <text
+                  x="210" y="265"
+                  textAnchor="middle"
+                  className={`heading-display transition-all duration-500 ${hovered === "left" ? "fill-white" : "fill-white/50"}`}
+                  style={{ fontSize: "32px" }}
+                >
+                  Learn AI
+                </text>
               </g>
             </Link>
 
             {/* ── CENTER STEM ── */}
-            <line x1="300" y1="50" x2="300" y2="400" stroke="rgba(255,255,255,0.06)" strokeWidth="1" strokeDasharray="4 4" />
-            <circle cx="300" cy="210" r="6" fill="#1a1f3a" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5">
-              <animate attributeName="r" values="6;7;6" dur="3s" repeatCount="indefinite" />
+            <line x1="348" y1="40" x2="348" y2="490" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+            <circle cx="348" cy="265" r="5" fill="#1a1f3a" stroke="rgba(255,255,255,0.08)" strokeWidth="1">
+              <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" />
             </circle>
-            <circle cx="300" cy="210" r="3" fill="#6366F1" opacity="0.6">
+            <circle cx="348" cy="265" r="2.5" fill="#6366F1" opacity="0.5">
               <animate attributeName="fill" values="#6366F1;#06B6D4;#6366F1" dur="4s" repeatCount="indefinite" />
             </circle>
 
@@ -136,84 +152,99 @@ export default function Home() {
                 onMouseEnter={() => setHovered("right")}
                 onMouseLeave={() => setHovered(null)}
               >
-                {/* Brain shape — right half */}
+                {/* Outer brain shape — right, mirrored with bumps */}
                 <path
-                  d="M302 50 C370 50 430 80 460 130 C500 140 530 180 530 220 C530 270 500 310 460 320 C450 370 410 400 350 400 L302 400 L302 50Z"
-                  fill={hovered === "right" ? "rgba(6,182,212,0.12)" : "rgba(6,182,212,0.05)"}
-                  stroke={hovered === "right" ? "rgba(6,182,212,0.5)" : "rgba(6,182,212,0.15)"}
-                  strokeWidth="2"
+                  d="M351 40
+                     C396 38 436 50 466 75
+                     C501 95 531 125 551 165
+                     C581 175 611 210 616 255
+                     C624 305 606 350 576 380
+                     C566 415 541 445 501 465
+                     C471 480 431 488 386 490
+                     L351 490
+                     L351 40Z"
+                  fill={hovered === "right" ? "rgba(6,182,212,0.10)" : "rgba(6,182,212,0.03)"}
+                  stroke={hovered === "right" ? "rgba(6,182,212,0.45)" : "rgba(6,182,212,0.12)"}
+                  strokeWidth="1.5"
                   className="transition-all duration-500"
                 />
 
-                {/* Inner folds */}
-                <path d="M320 90 C380 100 420 140 440 180" stroke={hovered === "right" ? "rgba(6,182,212,0.35)" : "rgba(6,182,212,0.12)"} strokeWidth="1.5" strokeLinecap="round" className="transition-all duration-500" />
-                <path d="M320 160 C390 170 450 220 470 260" stroke={hovered === "right" ? "rgba(6,182,212,0.3)" : "rgba(6,182,212,0.1)"} strokeWidth="1.5" strokeLinecap="round" className="transition-all duration-500" />
-                <path d="M320 240 C370 250 410 290 430 330" stroke={hovered === "right" ? "rgba(6,182,212,0.25)" : "rgba(6,182,212,0.08)"} strokeWidth="1.5" strokeLinecap="round" className="transition-all duration-500" />
+                {/* Frontal lobe bump — mirrored */}
+                <path
+                  d="M466 75 C496 60 536 65 556 90 C576 115 581 145 551 165"
+                  stroke={hovered === "right" ? "rgba(6,182,212,0.35)" : "rgba(6,182,212,0.1)"}
+                  strokeWidth="1.2" strokeLinecap="round" fill="none"
+                  className="transition-all duration-500"
+                />
 
-                {/* Neural paths for sparks */}
+                {/* Sulci */}
+                <path d="M376 80 C436 100 486 150 521 200" stroke={hovered === "right" ? "rgba(6,182,212,0.30)" : "rgba(6,182,212,0.08)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M366 140 C426 155 496 210 536 270" stroke={hovered === "right" ? "rgba(6,182,212,0.25)" : "rgba(6,182,212,0.07)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M361 210 C416 225 476 275 521 335" stroke={hovered === "right" ? "rgba(6,182,212,0.22)" : "rgba(6,182,212,0.06)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M361 290 C406 305 451 345 486 395" stroke={hovered === "right" ? "rgba(6,182,212,0.18)" : "rgba(6,182,212,0.05)"} strokeWidth="1.2" strokeLinecap="round" className="transition-all duration-500" />
+                <path d="M361 360 C396 370 431 400 456 440" stroke={hovered === "right" ? "rgba(6,182,212,0.15)" : "rgba(6,182,212,0.04)"} strokeWidth="1" strokeLinecap="round" className="transition-all duration-500" />
+
+                {/* Neural paths */}
                 <defs>
-                  <path id="r-path-1" d="M330 120 C380 130 420 160 445 195" />
-                  <path id="r-path-2" d="M340 200 C390 210 440 250 460 290" />
-                  <path id="r-path-3" d="M330 300 C370 310 400 340 415 370" />
+                  <path id="r-p1" d="M386 100 C446 120 496 165 521 210" />
+                  <path id="r-p2" d="M376 180 C436 200 506 250 536 310" />
+                  <path id="r-p3" d="M366 270 C416 290 466 340 496 400" />
+                  <path id="r-p4" d="M386 350 C426 370 456 410 471 455" />
                 </defs>
 
                 {/* Nodes */}
-                <circle cx="330" cy="120" r={hovered === "right" ? "5" : "3.5"} fill="#06B6D4" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" repeatCount="indefinite" />
+                <circle cx="386" cy="100" r={hovered === "right" ? "5" : "3"} fill="#06B6D4" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="445" cy="195" r={hovered === "right" ? "4" : "3"} fill="#22D3EE" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" begin="0.8s" repeatCount="indefinite" />
+                <circle cx="521" cy="210" r={hovered === "right" ? "4.5" : "2.5"} fill="#22D3EE" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3s" begin="0.8s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="340" cy="200" r={hovered === "right" ? "5" : "3.5"} fill="#06B6D4" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.7;1;0.7" dur="2.8s" begin="0.3s" repeatCount="indefinite" />
+                <circle cx="376" cy="180" r={hovered === "right" ? "4" : "2.5"} fill="#06B6D4" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" begin="0.3s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="460" cy="290" r={hovered === "right" ? "4" : "3"} fill="#67E8F9" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" begin="2s" repeatCount="indefinite" />
+                <circle cx="536" cy="310" r={hovered === "right" ? "4" : "2.5"} fill="#67E8F9" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" begin="2s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="330" cy="300" r={hovered === "right" ? "4.5" : "3"} fill="#22D3EE" className="transition-all duration-300">
-                  <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3.3s" begin="1.2s" repeatCount="indefinite" />
+                <circle cx="366" cy="270" r={hovered === "right" ? "4.5" : "3"} fill="#22D3EE" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="3.3s" begin="1.2s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="415" cy="370" r="2.5" fill="#67E8F9">
+                <circle cx="496" cy="400" r={hovered === "right" ? "3.5" : "2"} fill="#67E8F9" className="transition-all duration-300">
                   <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" begin="1.5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="386" cy="350" r={hovered === "right" ? "3.5" : "2"} fill="#06B6D4" className="transition-all duration-300">
+                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.8s" begin="2.5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="471" cy="455" r="2" fill="#A5F3FC">
+                  <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" begin="1s" repeatCount="indefinite" />
                 </circle>
 
                 {/* Sparks */}
-                <Spark delay={0.5} duration={2.5} color="#22D3EE" path="r-path-1" />
-                <Spark delay={2} duration={3} color="#06B6D4" path="r-path-2" />
-                <Spark delay={3.5} duration={2.3} color="#67E8F9" path="r-path-3" />
+                <Spark delay={0.5} duration={2.5} color="#22D3EE" path="r-p1" />
+                <Spark delay={1.8} duration={3} color="#06B6D4" path="r-p2" />
+                <Spark delay={3} duration={2.3} color="#67E8F9" path="r-p3" />
+                <Spark delay={4.2} duration={2.6} color="#22D3EE" path="r-p4" />
 
-                {/* Text overlay */}
-                <foreignObject x="315" y="130" width="200" height="200">
-                  <div className="flex flex-col items-center justify-center h-full text-center px-2">
-                    <svg className={`w-7 h-7 mb-2 transition-all duration-300 ${hovered === "right" ? "text-cyan-400 scale-110" : "text-cyan-400/50"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                    </svg>
-                    <span className={`heading-display text-[20px] md:text-[26px] transition-all duration-300 ${hovered === "right" ? "text-white scale-105" : "text-white/70"}`}>
-                      Implement AI
-                    </span>
-                    <span className={`text-[10px] md:text-[11px] mt-1.5 transition-all duration-300 leading-relaxed ${hovered === "right" ? "text-white/60" : "text-white/30"}`}>
-                      We build &amp; deploy AI solutions for your business
-                    </span>
-                    <div className={`flex gap-1.5 mt-3 transition-all duration-300 ${hovered === "right" ? "opacity-100" : "opacity-0"}`}>
-                      {["Audit", "Chatbots", "Voice"].map((t) => (
-                        <span key={t} className="text-[8px] px-2 py-0.5 rounded-full border border-cyan-400/30 text-cyan-300">{t}</span>
-                      ))}
-                    </div>
-                  </div>
-                </foreignObject>
+                {/* Label */}
+                <text
+                  x="486" y="265"
+                  textAnchor="middle"
+                  className={`heading-display transition-all duration-500 ${hovered === "right" ? "fill-white" : "fill-white/50"}`}
+                  style={{ fontSize: "30px" }}
+                >
+                  Implement AI
+                </text>
               </g>
             </Link>
           </svg>
         </div>
 
         {/* Bottom labels */}
-        <div className="flex justify-between w-full max-w-[500px] mt-4 px-8">
-          <span className={`text-[9px] tracking-[0.15em] uppercase transition-all duration-300 ${hovered === "left" ? "text-indigo-400/60" : "text-white/15"}`}>
-            Left Brain · Logic
+        <div className="flex justify-between w-full max-w-[580px] mt-2 px-12">
+          <span className={`text-[9px] tracking-[0.15em] uppercase transition-all duration-300 ${hovered === "left" ? "text-indigo-400/60" : "text-white/12"}`}>
+            Logic · Structure
           </span>
-          <span className="text-[9px] tracking-[0.15em] uppercase text-white/20">Choose your path</span>
-          <span className={`text-[9px] tracking-[0.15em] uppercase transition-all duration-300 ${hovered === "right" ? "text-cyan-400/60" : "text-white/15"}`}>
-            Right Brain · Creative
+          <span className={`text-[9px] tracking-[0.15em] uppercase transition-all duration-300 ${hovered === "right" ? "text-cyan-400/60" : "text-white/12"}`}>
+            Creative · Vision
           </span>
         </div>
       </div>
